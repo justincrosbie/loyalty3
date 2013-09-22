@@ -1,0 +1,12 @@
+<div ng-controller="CustomersController" ng-init="find()">
+  <ul class="unstyled">
+    <h2>Customers</h2>
+      <li ng-repeat="customer in customers">
+      <a href="#!/customers/{{ customer._id }}">{{customer.name}}</a>
+      (<a href="#!/customers/{{ customer._id }}/edit">Edit</a>)
+      (<a href="" ng-click="remove(customer)" >Remove</a>)
+    </li>
+  </ul>
+  <br>
+  <a href="#!/customers/create">Create a new customer</a>
+</div>
