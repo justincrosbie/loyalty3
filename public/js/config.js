@@ -5,50 +5,75 @@ window.app.config(['$routeProvider', function($routeProvider) {
   { 
     templateUrl: 'views/index.html' 
   })
-  .when('/nflteams',
+
+  .when('/titles', 
   {
-    templateUrl: 'views/nfl/list.html'
+    templateUrl: 'views/titles/list.html'
   })
-  .when('/nflteams/:nflTeamId',
-  {
-    templateUrl: 'views/nfl/view.html'
-  })
-  .when('/leagues', 
+  .when('/titles/create', 
   { 
-    templateUrl: 'views/leagues/list.html' 
-  })
-  .when('/leagues/create', 
-  { 
-    templateUrl: 'views/leagues/create.html' 
+    templateUrl: 'views/titles/create.html' 
   })  
-  .when('/leagues/:leagueId/edit', 
+  .when('/titles/:titleId/edit', 
   { 
-    templateUrl: 'views/leagues/edit.html' 
+    templateUrl: 'views/titles/edit.html' 
   })
-  .when('/leagues/:leagueId', 
+  .when('/titles/:titleId', 
   { 
-    templateUrl: 'views/leagues/view.html' 
+    templateUrl: 'views/titles/view.html' 
   })
-  .when('/fantasyteams', 
+  
+  .when('/currencys', 
   {
-    templateUrl: 'views/fantasyteams/list.html'
+    templateUrl: 'views/currencys/list.html'
   })
-  .when('/fantasyteams/create', 
+  .when('/currencys/create', 
   { 
-    templateUrl: 'views/fantasyteams/create.html' 
+    templateUrl: 'views/currencys/create.html' 
   })  
-  .when('/fantasyteams/:fantasyTeamId/edit', 
+  .when('/currencys/:currencyId/edit', 
   { 
-    templateUrl: 'views/fantasyteams/edit.html' 
+    templateUrl: 'views/currencys/edit.html' 
   })
-  .when('/fantasyteams/:fantasyTeamId', 
+  .when('/currencys/:currencyId', 
   { 
-    templateUrl: 'views/fantasyteams/view.html' 
+    templateUrl: 'views/currencys/view.html' 
   })
-  .when('/players',
+
+  .when('/countrys', 
   {
-    templateUrl: 'views/players/list.html'
+    templateUrl: 'views/countrys/list.html'
   })
+  .when('/countrys/create', 
+  { 
+    templateUrl: 'views/countrys/create.html' 
+  })  
+  .when('/countrys/:countryId/edit', 
+  { 
+    templateUrl: 'views/countrys/edit.html' 
+  })
+  .when('/countrys/:countryId', 
+  { 
+    templateUrl: 'views/countrys/view.html' 
+  })
+    
+  .when('/subscriptions', 
+  {
+    templateUrl: 'views/subscriptions/list.html'
+  })
+  .when('/subscriptions/create', 
+  { 
+    templateUrl: 'views/subscriptions/create.html' 
+  })  
+  .when('/subscriptions/:subscriptionId/edit', 
+  { 
+    templateUrl: 'views/subscriptions/edit.html' 
+  })
+  .when('/subscriptions/:subscriptionId', 
+  { 
+    templateUrl: 'views/subscriptions/view.html' 
+  })
+  
   .when('/customers', 
   {
     templateUrl: 'views/customers/list.html'
@@ -65,7 +90,59 @@ window.app.config(['$routeProvider', function($routeProvider) {
   { 
     templateUrl: 'views/customers/view.html' 
   })
-  .otherwise({redirectTo: '/'});
+  
+  .when('/sites', 
+  {
+    templateUrl: 'views/sites/list.html'
+  })
+  .when('/sites/create', 
+  { 
+    templateUrl: 'views/sites/create.html' 
+  })  
+  .when('/sites/:siteId/edit', 
+  { 
+    templateUrl: 'views/sites/edit.html' 
+  })
+  .when('/sites/:siteId', 
+  { 
+    templateUrl: 'views/sites/view.html' 
+  })
+  
+  .when('/companys', 
+  {
+    templateUrl: 'views/companys/list.html'
+  })
+  .when('/companys/create', 
+  { 
+    templateUrl: 'views/companys/create.html' 
+  })  
+  .when('/companys/:companyId/edit', 
+  { 
+    templateUrl: 'views/companys/edit.html' 
+  })
+  .when('/companys/:companyId', 
+  { 
+    templateUrl: 'views/companys/view.html' 
+  })
+  
+  .when('/persons', 
+  {
+    templateUrl: 'views/persons/list.html'
+  })
+  .when('/persons/create', 
+  { 
+    templateUrl: 'views/persons/create.html' 
+  })  
+  .when('/persons/:personId/edit', 
+  { 
+    templateUrl: 'views/persons/edit.html' 
+  })
+  .when('/persons/:personId', 
+  { 
+    templateUrl: 'views/persons/view.html' 
+  })
+  
+    .otherwise({redirectTo: '/'});
 }]);
 
 //Removing tomcat unspported headers

@@ -8,7 +8,7 @@ var PersonSchema = new Schema({
   firstname: {type : String},
   middlename: {type : String},
   lastname: {type : String},
-  age: {type : Number},
+  gender: {type : Number},
   dob: {type : Date},
   email: {type : String},
   homephone: {type : String},
@@ -27,6 +27,7 @@ var PersonSchema = new Schema({
   workcity: {type : String},
   workpostcode: {type : String},
   workcountry: {type: Schema.ObjectId, ref: 'Country'},
+  company: {type: Schema.ObjectId, ref: 'Company'},
   site: {type: Schema.ObjectId, ref: 'Site'},
   customer: {type: Schema.ObjectId, ref: 'Customer'},
   created: {type : Date},
@@ -37,7 +38,7 @@ var PersonSchema = new Schema({
  
  PersonSchema.statics = {
    load: function (id, cb) {
-     this.findOne({ _id : id }).exec(cb);
+     this.findOne({ _id : id }).populate('title').populate('homecountry').populate('workcountry').populate('company').populate('site').populate('customer').exec(cb);
    }
  };
  

@@ -1,0 +1,16 @@
+<div ng-controller="CountrysController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Country</h1>
+    </div>
+  </ul>
+  <ul>
+	  <p>Name: {{ country.name }}</p>
+    <p>ISO Code: {{ country.isocode }}</p>
+    <p>IDC: {{ country.idc }}</p>
+    <p>Currency: {{ country.currency.name }}</p>
+  </ul>
+  <ul>
+	  <a href="#!/countrys">View all Countrys</a>
+  </ul>
+</div>

@@ -3,15 +3,15 @@ extends auth
 block auth
   form(action="/users/session", method="post")
     p.error= message
-    .control-group
-      label(for='email') Email
-      input#email(type='text', name="email", placeholder='Email')
+    .form-group
+      label(for='email').control-label Email
+      input#email(type='text', name="email", placeholder='Email').form-control
 
-    .control-group
-      label(for='password') Password
-      input#password(type='password', name="password", placeholder='Password')
+    .form-group
+      label(for='password').control-label Password
+      input#password(type='password', name="password", placeholder='Password').form-control
 
-    .control-group
+    .form-group
       button.btn.btn-primary(type='submit') Sign in
       &nbsp;
       | or&nbsp;

@@ -4,7 +4,11 @@ var mongoose = require('mongoose')
   , Schema = mongoose.Schema;
  
 var TitleSchema = new Schema({
-  name: {type : String}
+  name: {type : String},
+  created: {type : Date},
+  createdby: {type: Schema.ObjectId, ref: 'User'},
+  modified: {type : Date},
+  modifiedby: {type: Schema.ObjectId, ref: 'User'}
 });
  
  TitleSchema.statics = {

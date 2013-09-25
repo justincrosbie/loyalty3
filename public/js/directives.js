@@ -17,4 +17,4 @@ window.angular.module('ngff.directives', [])
 	    templateUrl: "views/players/searchlimitselect.html"
 	  };
 	})
-  
+;

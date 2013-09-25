@@ -4,12 +4,19 @@ var mongoose = require('mongoose')
   , Schema = mongoose.Schema;
  
 var CustomerSchema = new Schema({
-  name: {type : String}
+  name: {type : String},
+  subscription: {type: Schema.ObjectId, ref: 'Subscription'},
+  start: {type : Date},
+  end: {type : Date},
+  created: {type : Date},
+  createdby: {type: Schema.ObjectId, ref: 'User'},
+  modified: {type : Date},
+  modifiedby: {type: Schema.ObjectId, ref: 'User'}
 });
  
  CustomerSchema.statics = {
    load: function (id, cb) {
-     this.findOne({ _id : id }).exec(cb);
+     this.findOne({ _id : id }).populate('subscription').exec(cb);
    }
  };
  

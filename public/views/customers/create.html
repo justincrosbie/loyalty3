@@ -1,15 +1,36 @@
-<div ng-controller="CustomersController" class="jumbotron"> 
-  <form class="form-horizontal" ng-submit="create()"> 
-    <div class="control-group"> 
-      <label class="control-label" for="name">Name</label> 
-      <div class="controls"> 
-        <input type="text" ng-model="customer.name" id="name" placeholder="Name"> 
+<div ng-controller="CustomersController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Create New Customer</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-horizontal" ng-submit="create()" ng-init="populateSubscriptions()"> 
+      <div class="form-group"> 
+        <label class="control-label" for="name">Name</label> 
+        <div class="controls"> 
+          <input type="text" ng-model="customer.name" id="name" class="form-control"> 
+        </div> 
+        <label class="control-label" for="subscription">Subscription</label> 
+        <div class="controls"> 
+          <select ng-model="customer.subscription" name="subscription" required="required" ng-options="c._id as c.name for c in subscriptions"> 
+            <option value="">Choose a subscription:</option>
+          </select> 
+        </div> 
+        <label class="control-label" for="start">Start Date</label> 
+        <div class="controls"> 
+          <input type="text" ng-model="customer.start" id="start" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control">
+        </div>      
+        <label class="control-label" for="end">End Date</label> 
+        <div class="controls"> 
+          <input type="text" ng-model="customer.end" id="end" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control"> 
+        </div>      
       </div> 
-    </div> 
-    <div class="control-group"> 
-      <div class="controls"> 
-        <input type="submit" class="btn"> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
       </div> 
-    </div> 
-  </form>
+    </form>
+  </ul>
 </div>

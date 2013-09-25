@@ -18,7 +18,7 @@ module.exports = {
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'ngFantasyFootball - Development'
+      name: 'loyalty3 - Development'
     }
   },
   test: {
@@ -26,7 +26,7 @@ module.exports = {
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'ngFantasyFootball - Test'
+      name: 'loyalty3 - Test'
     }
   },
   production: {
@@ -34,7 +34,7 @@ module.exports = {
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'ngFantasyFootball - Production'
+      name: 'loyalty3 - Production'
     }
   }
 }

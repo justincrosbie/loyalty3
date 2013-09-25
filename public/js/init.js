@@ -1,5 +1,5 @@
 window.bootstrap = function () {
-    angular.bootstrap(document, ['ngFantasyFootball']);
+    angular.bootstrap(document, ['loyalty3']);
 }
 
 window.init = function () {

@@ -15,31 +15,45 @@ module.exports = function (app, passport, auth) {
   
   app.param('userId', users.user)
   
-  var leagues = require('../app/controllers/leagues')  
-  app.get('/leagues', leagues.all)
-  app.post('/leagues', auth.requiresLogin, leagues.create)
-  app.get('/leagues/:leagueId', leagues.show)
-  app.put('/leagues/:leagueId', auth.requiresLogin, leagues.update)
-  app.del('/leagues/:leagueId', auth.requiresLogin, leagues.destroy)
+  // title routes
+  var titles = require('../app/controllers/titles')  
+  app.get('/titles', titles.all)
+  app.post('/titles', auth.requiresLogin, titles.create)
+  app.get('/titles/:titleId', titles.show)
+  app.put('/titles/:titleId', auth.requiresLogin, titles.update)
+  app.del('/titles/:titleId', auth.requiresLogin, titles.destroy)
  
-  app.param('leagueId', leagues.league)
+  app.param('titleId', titles.title)
 
-  // fantasy team routes
-  var fantasyteams = require('../app/controllers/fantasyteams')  
-  app.get('/fantasyteams', fantasyteams.all)
-  app.post('/fantasyteams', auth.requiresLogin, fantasyteams.create)
-  app.get('/fantasyteams/:fantasyTeamId', fantasyteams.show)
-  app.put('/fantasyteams/:fantasyTeamId', auth.requiresLogin, fantasyteams.update)
-  app.del('/fantasyteams/:fantasyTeamId', auth.requiresLogin, fantasyteams.destroy)
+  // currency routes
+  var currencys = require('../app/controllers/currencys')  
+  app.get('/currencys', currencys.all)
+  app.post('/currencys', auth.requiresLogin, currencys.create)
+  app.get('/currencys/:currencyId', currencys.show)
+  app.put('/currencys/:currencyId', auth.requiresLogin, currencys.update)
+  app.del('/currencys/:currencyId', auth.requiresLogin, currencys.destroy)
  
-  app.param('fantasyTeamId', fantasyteams.fantasyteam)
+  app.param('currencyId', currencys.currency)
 
-  // player routes
-  var players = require('../app/controllers/players')
-  app.get('/players', players.all)
-  app.get('/players/:playerId', players.show)
+  // country routes
+  var countrys = require('../app/controllers/countrys')  
+  app.get('/countrys', countrys.all)
+  app.post('/countrys', auth.requiresLogin, countrys.create)
+  app.get('/countrys/:countryId', countrys.show)
+  app.put('/countrys/:countryId', auth.requiresLogin, countrys.update)
+  app.del('/countrys/:countryId', auth.requiresLogin, countrys.destroy)
  
-  app.param('playerId', players.player)
+  app.param('countryId', countrys.country)
+
+  // subscription routes
+  var subscriptions = require('../app/controllers/subscriptions')  
+  app.get('/subscriptions', subscriptions.all)
+  app.post('/subscriptions', auth.requiresLogin, subscriptions.create)
+  app.get('/subscriptions/:subscriptionId', subscriptions.show)
+  app.put('/subscriptions/:subscriptionId', auth.requiresLogin, subscriptions.update)
+  app.del('/subscriptions/:subscriptionId', auth.requiresLogin, subscriptions.destroy)
+ 
+  app.param('subscriptionId', subscriptions.subscription)
 
   // customer routes
   var customers = require('../app/controllers/customers')  
@@ -50,6 +64,36 @@ module.exports = function (app, passport, auth) {
   app.del('/customers/:customerId', auth.requiresLogin, customers.destroy)
  
   app.param('customerId', customers.customer)
+
+  // site routes
+  var sites = require('../app/controllers/sites')  
+  app.get('/sites', sites.all)
+  app.post('/sites', auth.requiresLogin, sites.create)
+  app.get('/sites/:siteId', sites.show)
+  app.put('/sites/:siteId', auth.requiresLogin, sites.update)
+  app.del('/sites/:siteId', auth.requiresLogin, sites.destroy)
+ 
+  app.param('siteId', sites.site)
+
+  // company routes
+  var companys = require('../app/controllers/companys')  
+  app.get('/companys', companys.all)
+  app.post('/companys', auth.requiresLogin, companys.create)
+  app.get('/companys/:companyId', companys.show)
+  app.put('/companys/:companyId', auth.requiresLogin, companys.update)
+  app.del('/companys/:companyId', auth.requiresLogin, companys.destroy)
+ 
+  app.param('companyId', companys.company)
+
+  // person routes
+  var persons = require('../app/controllers/persons')  
+  app.get('/persons', persons.all)
+  app.post('/persons', auth.requiresLogin, persons.create)
+  app.get('/persons/:personId', persons.show)
+  app.put('/persons/:personId', auth.requiresLogin, persons.update)
+  app.del('/persons/:personId', auth.requiresLogin, persons.destroy)
+ 
+  app.param('personId', persons.person)
 
       // home route
   var index = require('../app/controllers/index')

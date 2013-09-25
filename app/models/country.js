@@ -6,12 +6,17 @@ var mongoose = require('mongoose')
 var CountrySchema = new Schema({
   isocode: {type : String},
   name: {type : String},
-  idc: {type : String}
+  idc: {type : String},
+  currency: {type: Schema.ObjectId, ref: 'Currency'},
+  created: {type : Date},
+  createdby: {type: Schema.ObjectId, ref: 'User'},
+  modified: {type : Date},
+  modifiedby: {type: Schema.ObjectId, ref: 'User'}
 });
  
  CountrySchema.statics = {
    load: function (id, cb) {
-     this.findOne({ _id : id }).exec(cb);
+     this.findOne({ _id : id }).populate('currency').exec(cb);
    }
  };
  

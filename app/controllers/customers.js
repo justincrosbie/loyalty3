@@ -5,6 +5,12 @@ var mongoose = require('mongoose')
  
 exports.create = function (req, res) {
   var customer = new Customer(req.body)
+
+  customer.subscription = req.body.subscription
+
+  customer.createdby = req.user
+  customer.created = new Date()
+
   customer.save()
   res.jsonp(customer)
 }
@@ -24,7 +30,7 @@ exports.customer = function(req, res, next, id){
 }
  
 exports.all = function(req, res){
- Customer.find().exec(function(err, customers) {
+ Customer.find().populate('subscription').exec(function(err, customers) {
    if (err) {
       res.render('error', {status: 500});
    } else {      
@@ -36,6 +42,10 @@ exports.all = function(req, res){
 exports.update = function(req, res){
   var customer = req.customer
   customer = _.extend(customer, req.body)
+
+  customer.modifiedby = req.user
+  customer.modified = new Date()
+  
   customer.save(function(err) {
     res.jsonp(customer)
   })

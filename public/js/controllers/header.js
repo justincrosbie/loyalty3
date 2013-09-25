@@ -5,24 +5,39 @@
 
 		$scope.navbarEntries = [
 		  {
-		    "title": "Leagues",
-		    "link": "leagues"
-		  },
-		  {
-		    "title": "Fantasy Teams",
-		    "link": "fantasyteams"
-		  },
-		  {
-		    "title": "NFL Teams",
-		    "link": "nflteams"
-		  },
-		  {
-		    "title": "Players",
-		    "link": "players"
-		  },
-		  {
 		    "title": "Customers",
 		    "link": "customers"
+		  },
+		  {
+		    "title": "Sites",
+		    "link": "sites"
+		  },
+		  {
+		    "title": "Companys",
+		    "link": "companys"
+		  },
+		  {
+		    "title": "Persons",
+		    "link": "persons"
+		  }
+		];
+
+		$scope.navbarAdminEntries = [
+		  {
+		    "title": "Subscriptions",
+		    "link": "subscriptions"
+		  },
+		  {
+		    "title": "Currencys",
+		    "link": "currencys"
+		  },
+		  {
+		    "title": "Countrys",
+		    "link": "countrys"
+		  },
+		  {
+		    "title": "Titles",
+		    "link": "titles"
 		  }
 		];
 

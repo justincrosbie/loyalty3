@@ -1,0 +1,16 @@
+<div ng-controller="SitesController" ng-init="findOne()">
+
+  <ul>
+    <div class="page-header">
+      <h1>View Site</h1>
+    </div>
+  </ul>
+  <ul>
+	  <p>Name: {{ site.name }}</p>
+	  <p>Customer: {{ site.customer.name }}</p>
+
+  </ul>
+  <ul>
+	  <a href="#!/sites">View all sites</a>
+  </ul>
+</div>
