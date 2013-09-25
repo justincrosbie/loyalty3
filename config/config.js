@@ -30,7 +30,7 @@ module.exports = {
     }
   },
   production: {
-    db: 'mongodb://localhost/ngff',
+    db: 'mongodb://jc:jc@ds063307.mongolab.com:63307/jcajs',
     root: rootPath,
     notifier: notifier,
     app: {
