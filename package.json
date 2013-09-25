@@ -15,6 +15,7 @@
   , "dependencies": {
       "express": "latest"
     , "jade": "latest"
+    , "mongodb" : "latest"
     , "mongoose": "latest"
     , "connect-mongo": "latest"
     , "connect-flash": "latest"
