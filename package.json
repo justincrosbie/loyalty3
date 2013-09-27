@@ -5,7 +5,7 @@
   , "private": false
   , "author": "MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support)."
   , "engines": {
-        "node": "0.10.x"
+        "node": "0.10.17"
       , "npm":  "1.2.x"
     }
   , "scripts": {
