@@ -1,0 +1,152 @@
+<div ng-controller="RawpersonsController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Create New Rawperson</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-horizontal" ng-submit="create()" ng-init="populateLOVs()"> 
+      <div class="form-group">
+        <tabset>
+          <tab heading="Details" select="detailsSelected(rawperson)">
+            <label class="control-label" for="code">Code</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.code" id="code" class="form-control"> 
+            </div> 
+            <label class="control-label" for="title">Title</label> 
+            <div class="controls"> 
+              <select ng-model="rawperson.title" name="title" required="required" ng-options="c._id as c.name for c in titles"> 
+                <option value="">Choose a Title:</option>
+              </select> 
+            </div> 
+            <label class="control-label" for="firstname">First Name</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.firstname" id="firstname" class="form-control"> 
+            </div> 
+            <label class="control-label" for="middlename">Middle Name</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.middlename" id="middlename" class="form-control"> 
+            </div> 
+            <label class="control-label" for="lastname">Last Name</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.lastname" id="lastname" class="form-control"> 
+            </div> 
+            <label class="control-label" for="gender">Gender</label> 
+            <div class="controls"> 
+              <div class="btn-group" ng-model="rawperson.gender" bs-buttons-radio>
+                <button type="button" class="btn btn-default" value="1">Male</button>
+                <button type="button" class="btn btn-default" value="2">Female</button>
+              </div>
+            </div> 
+            <label class="control-label" for="dob">Date of Birth</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.dob" id="dob" class="form-control" data-date-format="dd/mm/yyyy" bs-datepicker > 
+            </div> 
+            <label class="control-label" for="rawcompany">Company</label> 
+            <div class="controls"> 
+              <select ng-model="rawperson.rawcompany" name="rawcompany" required="required" ng-options="c._id as c.name for c in companys"> 
+                <option value="">Choose a Company:</option>
+              </select> 
+            </div> 
+          </tab>
+          <tab heading="Home Contact" select="contactHomeSelected(rawperson)">
+            <label class="control-label" for="email">Email</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.email" id="email" class="form-control"> 
+            </div> 
+            <label class="control-label" for="homephone">Home Phone</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.homephone" id="homephone" class="form-control"> 
+            </div> 
+            <label class="control-label" for="homeaddress1">Home Address Line1</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.homeaddress1" id="homeaddress1" class="form-control"> 
+            </div> 
+            <label class="control-label" for="homeaddress2">Home Address Line2</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.homeaddress2" id="homeaddress2" class="form-control"> 
+            </div> 
+            <label class="control-label" for="homeaddress3">Home Address Line3</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.homeaddress3" id="homeaddress3" class="form-control"> 
+            </div> 
+            <label class="control-label" for="homesuburb">Home District</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.homesuburb" id="homesuburb" class="form-control"> 
+            </div> 
+            <label class="control-label" for="homecity">Home City</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.homecity" id="homecity" class="form-control"> 
+            </div> 
+            <label class="control-label" for="homepostcode">Home Postcode</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.homepostcode" id="homepostcode" class="form-control"> 
+            </div> 
+            <label class="control-label" for="homecountry">Home Country</label> 
+            <div class="controls"> 
+              <select ng-model="rawperson.homecountry" name="homecountry" required="required" ng-options="c._id as c.name for c in countrys"> 
+                <option value="">Choose a Country:</option>
+              </select> 
+            </div> 
+          </tab>
+          <tab heading="Work Contact" select="contactWorkSelected(rawperson)">
+            <label class="control-label" for="workphone">Work Phone</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.workphone" id="workphone" class="form-control"> 
+            </div> 
+            <label class="control-label" for="workaddress1">Work Address Line1</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.workaddress1" id="workaddress1" class="form-control"> 
+            </div> 
+            <label class="control-label" for="workaddress2">Work Address Line2</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.workaddress2" id="workaddress2" class="form-control"> 
+            </div> 
+            <label class="control-label" for="workaddress3">Work Address Line3</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.workaddress3" id="workaddress3" class="form-control"> 
+            </div> 
+            <label class="control-label" for="worksuburb">Work District</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.worksuburb" id="worksuburb" class="form-control"> 
+            </div> 
+            <label class="control-label" for="workcity">Work City</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.workcity" id="workcity" class="form-control"> 
+            </div> 
+            <label class="control-label" for="workpostcode">Work Postcode</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="rawperson.workpostcode" id="workpostcode" class="form-control"> 
+            </div> 
+            <label class="control-label" for="workcountry">Work Country</label> 
+            <div class="controls"> 
+              <select ng-model="rawperson.workcountry" name="workcountry" required="required" ng-options="c._id as c.name for c in countrys"> 
+                <option value="">Choose a Country:</option>
+              </select> 
+            </div> 
+          </tab>
+          <tab heading="Other" select="otherSelected(rawperson)">
+            <label class="control-label" for="site">Site</label> 
+            <div class="controls"> 
+              <select ng-model="rawperson.site" name="site" required="required" ng-options="c._id as c.name for c in sites"> 
+                <option value="">Choose a Site:</option>
+              </select> 
+            </div> 
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls"> 
+              <select ng-model="rawperson.customer" name="customer" required="required" ng-options="c._id as c.name for c in customers"> 
+                <option value="">Choose a Customer:</option>
+              </select> 
+            </div> 
+          </tab>
+        </tabset>
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

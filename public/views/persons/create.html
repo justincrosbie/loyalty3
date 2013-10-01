@@ -6,8 +6,7 @@
   </ul>
   <ul>
     <form class="form-horizontal" ng-submit="create()" ng-init="populateLOVs()"> 
-      <div class="form-group"> 
-
+      <div class="form-group">
         <tabset>
           <tab heading="Details" select="detailsSelected(person)">
             <label class="control-label" for="title">Title</label> 
@@ -16,7 +15,7 @@
                 <option value="">Choose a Title:</option>
               </select> 
             </div> 
-            <label class="control-label" for="name">First Name</label> 
+            <label class="control-label" for="firstname">First Name</label> 
             <div class="controls"> 
               <input type="text" ng-model="person.firstname" id="firstname" class="form-control"> 
             </div> 
@@ -30,7 +29,7 @@
             </div> 
             <label class="control-label" for="gender">Gender</label> 
             <div class="controls"> 
-              <div class="btn-group" ng-model="company.gender" bs-buttons-radio>
+              <div class="btn-group" ng-model="person.gender" bs-buttons-radio>
                 <button type="button" class="btn btn-default" value="1">Male</button>
                 <button type="button" class="btn btn-default" value="2">Female</button>
               </div>
@@ -38,6 +37,12 @@
             <label class="control-label" for="dob">Date of Birth</label> 
             <div class="controls"> 
               <input type="text" ng-model="person.dob" id="dob" class="form-control" data-date-format="dd/mm/yyyy" bs-datepicker > 
+            </div> 
+            <label class="control-label" for="company">Company</label> 
+            <div class="controls"> 
+              <select ng-model="person.company" name="company" required="required" ng-options="c._id as c.name for c in companys"> 
+                <option value="">Choose a Company:</option>
+              </select> 
             </div> 
           </tab>
           <tab heading="Home Contact" select="contactHomeSelected(person)">

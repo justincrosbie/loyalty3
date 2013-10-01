@@ -3,7 +3,33 @@
     function ($scope, Global) {
       $scope.global = Global;
 
-		$scope.navbarEntries = [
+      $scope.changeNavbar = function(link) {
+
+      	if ( link == 'loyalty' ) {
+	        $scope.navbarEntries = $scope.navbarEntries2;
+	        $scope.navbarAdminEntries = $scope.navbarAdminEntries2;
+      	} else {
+	        $scope.navbarEntries = $scope.navbarEntries1;
+	        $scope.navbarAdminEntries = $scope.navbarAdminEntries1;
+      	}
+
+      	Global.currentApp(link);
+      }
+ 
+
+		$scope.apps = [
+		  {
+		    "title": "Guest Management",
+		    "link": "guestmanagement"
+		  },
+		  {
+		    "title": "Loyalty 3.0",
+		    "link": "loyalty"
+		  }
+		];
+
+
+		$scope.navbarEntries1 = [
 		  {
 		    "title": "Customers",
 		    "link": "customers"
@@ -22,7 +48,7 @@
 		  }
 		];
 
-		$scope.navbarAdminEntries = [
+		$scope.navbarAdminEntries1 = [
 		  {
 		    "title": "Subscriptions",
 		    "link": "subscriptions"
@@ -40,5 +66,42 @@
 		    "link": "titles"
 		  }
 		];
+
+		$scope.navbarEntries2 = [
+			  {
+			    "title": "Members",
+			    "link": "loyaltyMembers"
+			  },
+			  {
+			    "title": "Points",
+			    "link": "loyaltyPoints"
+			  },
+			  {
+			    "title": "Transactions",
+			    "link": "loyaltyTransactions"
+			  },
+			  {
+			    "title": "Statements",
+			    "link": "loyaltyStatements"
+			  },
+			  {
+			    "title": "Reports",
+			    "link": "loyaltyReports"
+			  }
+			];
+
+		$scope.navbarAdminEntries2 = [
+			  {
+			    "title": "Schemes",
+			    "link": "loyaltySchemes"
+			  },
+			  {
+			    "title": "Reports",
+			    "link": "loyaltyReports"
+			  }
+			];
+
+		$scope.navbarEntries = $scope.navbarEntries1;
+		$scope.navbarAdminEntries = $scope.navbarAdminEntries1;
 
     }]);

@@ -1,0 +1,17 @@
+<div ng-controller="LoyaltySchemesController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View LoyaltyScheme</h1>
+    </div>
+  </ul>
+  <ul>
+    <p>Name: {{ loyaltyScheme.name }}</p>
+    <p>Code: {{ loyaltyScheme.code }}</p>
+    <p>Description: {{ loyaltyScheme.description }}</p>
+    <p>Is Active: {{ loyaltyScheme.active }}</p>
+	  <p>Rate: {{ loyaltyScheme.rate }}</p>
+  </ul>
+  <ul>
+	  <a href="#!/loyaltySchemes">View all LoyaltySchemes</a>
+  </ul>
+</div>

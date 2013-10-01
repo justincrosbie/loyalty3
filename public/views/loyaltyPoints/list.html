@@ -1,0 +1,26 @@
+<div ng-controller="LoyaltyPointsController" ng-init="find()">
+  <ul>
+    <div class="page-header">
+      <h1>LoyaltyPoints</h1>
+    </div>
+  </ul>
+  <ul>
+      <table class="table table-striped table-bordered table-condensed">
+          <tr><th>Scheme</th><th>Name</th><th>Code</th><th>Start Date</th><th>End Date</th><th>Is Active</th><th>Points</th><th/><th/></tr>
+          <tr ng-repeat="loyaltyPoint in loyaltyPoints">
+            <td><a href="#!/loyaltyPoints/{{ loyaltyPoint._id }}">{{loyaltyPoint.loyaltyScheme.name}}</a></td>
+            <td><a href="#!/loyaltyPoints/{{ loyaltyPoint._id }}">{{loyaltyPoint.name}}</a></td>
+            <td><a href="#!/loyaltyPoints/{{ loyaltyPoint._id }}">{{loyaltyPoint.code}}</a></td>
+            <td>{{loyaltyPoint.start | date}}</td>
+            <td>{{loyaltyPoint.end | date}}</td>
+            <td>{{loyaltyPoint.active}}</td>
+            <td></td>
+            <td><a href="#!/loyaltyPoints/{{ loyaltyPoint._id }}/edit">Edit</a></td>
+            <td><a href="" ng-click="remove(loyaltyPoint)" >Remove</a></td>
+          </tr>
+      </table>
+  </ul>
+  <ul>
+    <a href="#!/loyaltyPoints/create" class="btn btn-primary">Create a new LoyaltyPoint</a>
+  </ul>
+</div>

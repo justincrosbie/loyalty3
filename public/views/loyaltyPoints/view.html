@@ -1,0 +1,20 @@
+<div ng-controller="LoyaltyPointsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View LoyaltyPoint</h1>
+    </div>
+  </ul>
+  <ul>
+    <p>Scheme: {{ loyaltyPoint.loyaltyScheme.name }}</p>
+    <p>Name: {{ loyaltyPoint.name }}</p>
+    <p>Code: {{ loyaltyPoint.code }}</p>
+    <p>Description: {{ loyaltyPoint.description }}</p>
+    <p>Is Active: {{ loyaltyPoint.active }}</p>
+    <p>Formula: {{ loyaltyPoint.formula }}</p>
+    <p>Start Date: {{ loyaltyPoint.start | date }}</p>
+    <p>End Date: {{ loyaltyPoint.end | date }}</p>
+  </ul>
+  <ul>
+	  <a href="#!/loyaltyPoints">View all LoyaltyPoints</a>
+  </ul>
+</div>

@@ -1,0 +1,500 @@
+   92  ./fastboot reboot
+   93  ./fastboot recovery
+   94  cd ..
+   95  ls
+   96  cd ..
+   97  ls
+   98  cd Applications/
+   99  cd eclipse/
+  100  cd android-sdk-macosx/
+  101  cd platform-tools/
+  102  ls -ltr
+  103  ./fastboot oem get_identifier_token
+  104  ./fastboot oem get_identifier_token
+  105  cd ..
+  106  ls
+  107  cd ..
+  108  ls
+  109  cd Applications/
+  110  cd eclipse/
+  111  ls
+  112  cd android-sdk-macosx/
+  113  ls
+  114  cd platform-tools/
+  115  ls
+  116  fastboot flash boot boot.img
+  117  ./fastboot flash boot boot.img
+  118  ./fastboot reboot
+  119  /Applications/rar ; exit;
+  120  cd Downloads/
+  121  cd torrents/
+  122  cd elbow/
+  123  cd Despicable\ Me\ 2\ 2013\ GoodQual-BBEPW/
+  124  ls
+  125  unrar Despicable\ Me\ 2\ 2013\ GoodQual-BBEPW.rar 
+  126  rar Despicable\ Me\ 2\ 2013\ GoodQual-BBEPW.rar 
+  127  ioreg -lw0 | grep \"EDID\" | sed "/[^<]*</s///" | xxd -p -r | strings -6
+  128  netstat -a
+  129  traceroute www.google.ie
+  130  ifconfig
+  131  ioreg -lw0 | grep \"EDID\" | sed "/[^<]*</s///" | xxd -p -r | strings -6
+  132  ioreg -lw0 | grep \"EDID\" | sed "/[^<]*</s///" | xxd -p -r | strings -6
+  133  npm
+  134  man npm
+  135  npm faq
+  136  node
+  137  node --version
+  138  npm install -g karma
+  139  mkdir dev
+  140  cd dev
+  141  mkdir angular
+  142  cd angular
+  143  mkdir tutorial
+  144  cd tutorial/
+  145  git clone git://github.com/angular/angular-phonecat.git
+  146  sudo npm install -g karma
+  147  ls
+  148  cd angular-phonecat/
+  149  git checkout -f step-0
+  150  ls -l
+  151  git checkout -f step-1
+  152  git checkout -f step-2
+  153  git checkout -f step-3
+  154  ./scripts/test.sh
+  155  cd dev/angular/tutorial/angular-phonecat/
+  156  ./scripts/test.sh
+  157  ./scripts/test.sh
+  158  ./scripts/test.sh
+  159  ./scripts/test.sh
+  160  npm install karma-junit-reporter --save-dev
+  161  ./scripts/test.sh
+  162  npm install karma-commonjs --save-dev
+  163  ./scripts/test.sh
+  164  pwd
+  165  ./scripts/test.sh
+  166  ./scripts/test.sh
+  167  ./scripts/test.sh
+  168  ./scripts/test.sh
+  169  ./scripts/test.sh
+  170  ./scripts/test.sh
+  171  ./scripts/test.sh
+  172  cd dev/angular/tutorial/angular-phonecat/
+  173  ls
+  174  node ./scripts/web-server.js
+  175  node ./scripts/web-server.js
+  176  sudo heimdall flash --kernel zImage
+  177  lsusb
+  178  cd Downloads/
+  179  ls -ltr
+  180  ls zImage 
+  181  ls -l zImage 
+  182  sudo heimdall flash --kernel zImage
+  183  adb sideload CWM-SuperSU-v0.97.zip 
+  184  pwd
+  185  cd ../
+  186  cd Applications
+  187  cd ../..
+  188  ls
+  189  cd ..
+  190  ls
+  191  cd Applications/
+  192  cd eclipse/
+  193  ls
+  194  cd android-sdk-macosx/
+  195  ls
+  196  cd platform-tools/
+  197  ls
+  198  pwd
+  199  cd
+  200  cd Downloads/
+  201  ../../../Applications/eclipse/android-sdk-macosx/platform-tools/adb sideload CWM-SuperSU-v0.97.zip 
+  202  cd Downloads/
+  203  cd Root\ for\ G300\ Mac/
+  204  ls
+  205  chmod +x root-g300.sh
+  206  ./root-g300.sh 
+  207  cd ../Tools\ for\ G300\ Mac/
+  208  ls
+  209  chmod +x root-g300.sh
+  210  ./root-g300.sh 
+  211  ./root-g300.sh 
+  212  chmod +x bootloader-g300.sh
+  213  ./bootloader-g300.sh 
+  214  chmod +x clockwork-g300.sh
+  215  ./clockwork-g300.sh 
+  216  ./clockwork-g300.sh 
+  217  ./clockwork-g300.sh 
+  218  cd Downloads/
+  219  cd Tools\ for\ G300\ Mac/
+  220  ls
+  221  ./clockwork-g300.sh 
+  222  ./clockwork-g300.sh 
+  223  cd Downloads/
+  224  ./clockwork-g300.sh 
+  225  ./clockwork-g300.sh 
+  226  ./clockwork-g300.sh 
+  227  pwd
+  228  cd
+  229  cd dev
+  230  curl http://downloads.mongodb.org/osx/mongodb-osx-x86_64-2.4.6.tgz > mongodb.tgz
+  231  brew update
+  232  ifconfig
+  233  pwd
+  234  cd dev
+  235  mkdir meteor
+  236  cd meteor/
+  237  curl https://install.meteor.com | sh
+  238  ls
+  239  pwd
+  240  cd ../angular/mean-stripdown-master
+  241  ls
+  242  node scripts/mongoimport.js 
+  243  mysql -u root -p
+  244  exit
+  245  mysql -u root -p
+  246  /usr/local/mysql/bin/mysql -u root -p
+  247  /usr/local/mysql/bin/mysqld
+  248  sudo /usr/local/mysql/bin/mysqld
+  249  sudo /Library/StartupItems/MySQLCOM/MySQLCOM start
+  250  /usr/local/mysql/bin/mysql -u root -p
+  251  /usr/local/mysql/bin/mysql -u root
+  252  vi ~/.profile 
+  253  exit
+  254  cd dev
+  255  cd angular/
+  256  ls
+  257  cd mean-stripdown-master/
+  258  ls -l
+  259  npm install
+  260  node server
+  261  cd ..
+  262  ls
+  263  cd linnovate-mean-84874bc
+  264  node server
+  265  ls
+  266  more README.md 
+  267   grunt
+  268  npm install -g grunt-cli
+  269  sudo npm install -g grunt-cli
+  270   grunt
+  271  sudo  grunt
+  272   grunt
+  273  sudo npm install -g grunt-cli
+  274  node server
+  275  pwd
+  276  more README.md 
+  277  npm istall
+  278  npm install
+  279  grunt
+  280  cd ..
+  281  ls
+  282  cd mean-stripdown-master/
+  283  grunt
+  284  node server
+  285  cd ..
+  286  ls
+  287  cd AngularTutorial-eBook-SourceCode
+  288  ls
+  289  cd src
+  290  ls
+  291  npm install
+  292  node server
+  293  cd ../mast
+  294  pwd
+  295  cd ../../mean-stripdown-master/
+  296  node server
+  297  pwd
+  298  cd ..
+  299  cd angular-app-master
+  300  ls
+  301  cd server/
+  302  npm install
+  303  cd ../client/
+  304  npm install
+  305  pwd
+  306  cd ../server/
+  307  cd ..
+  308  node server/initDB.js 
+  309  cd client/
+  310  grunt build
+  311  cd ../server/
+  312  node server.js 
+  313  pwd
+  314  cd ../../mean-stripdown-master/
+  315  ls
+  316  node server
+  317  node server
+  318  pwd
+  319  cd ..
+  320  mv mean-stripdown-master/ broke/
+  321  cd mean-stripdown-master
+  322  npm install
+  323  node server
+  324  pswd
+  325  pwd
+  326  cd ../AngularTutorial-eBook-SourceCode
+  327  cd src
+  328  ls
+  329  node server
+  330  cd ../../mean-stripdown-master
+  331  ls
+  332  node server
+  333  node server
+  334  node server
+  335  node server
+  336  node server
+  337  node server
+  338  node server
+  339  pwd
+  340  pwd
+  341  pwd
+  342  node server
+  343  node server
+  344  node server
+  345  pwd
+  346  cd ../bck/mean-stripdown-master\ 2/
+  347  node server
+  348  pwd
+  349  cd ../..
+  350  mv mean-stripdown-master/ broke/mean-stripdown-master.2
+  351  mv bck/mean-stripdown-master\ 2/ mean-stripdown-master
+  352  cd mean-stripdown-master
+  353  node server
+  354  node server
+  355  node server
+  356  node server
+  357  node server
+  358  node server
+  359  node server
+  360  node server
+  361  node server
+  362  pwd
+  363  cd ../angular-app-master
+  364  ls
+  365  cd server/
+  366  node server
+  367  pwd
+  368  cd ../../mean-stripdown-master
+  369  node server
+  370  node server
+  371  node server
+  372  node server
+  373  node server
+  374  node server
+  375  node server
+  376  node server
+  377  node server
+  378  cd ../AngularTutorial-eBook-SourceCode/src/
+  379  node server
+  380  cd ../../mean-stripdown-master
+  381  node server
+  382  node server
+  383  node server
+  384  node server
+  385  node server
+  386  node server
+  387  node server
+  388  node server
+  389  node server
+  390  node server
+  391  node server
+  392  node server
+  393  node server
+  394  node server
+  395  node server
+  396  node server
+  397  node server
+  398  node server
+  399  node server
+  400  node server
+  401  node server
+  402  node server
+  403  node server
+  404  pwd
+  405  pwd
+  406  node server
+  407  node server
+  408  pwd
+  409  node server
+  410  node server
+  411  node server
+  412  node server
+  413  node server
+  414  node server
+  415  node server
+  416  node server
+  417  node server
+  418  node server
+  419  node server
+  420  pwd
+  421  cd dev/angular/
+  422  ls
+  423  AngularTutorial-eBook-SourceCode/
+  424  cd AngularTutorial-eBook-SourceCode
+  425  cd src
+  426  node server
+  427  wd
+  428  pwd
+  429  cd ../../angular-app-master
+  430  ls
+  431  cd server/
+  432  ls
+  433  node server
+  434  pwd
+  435  cd ../../linnovate-mean-84874bc
+  436  ls
+  437  npm install
+  438  node server
+  439  pwd
+  440  cd ../
+  441  cd bck
+  442  ls
+  443  mv mean-stripdown-master\ 3 mean-stripdown-master-3
+  444  cd mean-stripdown-master-3/
+  445  ls
+  446  node server
+  447  pwd
+  448  cd ../../mean-stripdown-master
+  449  node server
+  450  pwd
+  451  bower install angular-strap
+  452  pwd
+  453  cd ../bck/mean-stripdown-master-3/
+  454  node server
+  455  node server
+  456  node server
+  457  node server
+  458  node server
+  459  node server
+  460  mongo
+  461  mongo
+  462  mysql -u root
+  463  mysql -u root
+  464  mysql -u root
+  465  mysql -u root -p
+  466  pwd
+  467  cd dev
+  468  cd angular/
+  469  ls
+  470  cd mean-stripdown-master
+  471  ls
+  472  bower install bootstrap
+  473  bower install --save bootstrap
+  474  pwd
+  475  git init
+  476  git add .
+  477  git commit
+  478  pwd
+  479  cd ../bck/mean-stripdown-master-3/
+  480  bower install angular-strap
+  481  node server
+  482  cd ../../mean-stripdown-master
+  483  bower install angular-animate
+  484  port install mongodb
+  485  sudo brew upgrade mongodb
+  486  sudo brew update
+  487  brew upgrade mongodb
+  488  port install mongodb
+  489  sudo port selfupdate
+  490  sudo port upgrade outdated
+  491  port install mongodb
+  492  sudo port install mongodb
+  493  mongod
+  494  sudomongod
+  495  sudo mongod
+  496  ls -l /data
+  497  sudo mkdir /data
+  498  sudo mkdir /data/db
+  499  sudo mongod
+  500  sudo mongod
+  501  history
+  502  mongo
+  503  pwd
+  504  cd dev
+  505  mkdir heroku
+  506  cd heroku
+  507  git clone git@heroku.com:loyalty3.git -o heroku
+  508  git clone git@heroku.com:loyalty3.git -o heroku
+  509  git clone git@heroku.com:loyalty3.git -o heroku
+  510  pwd
+  511  git clone git@heroku.com:loyalty3.git -o heroku
+  512  sudo git clone git@heroku.com:loyalty3.git -o heroku
+  513  pwd
+  514  ls
+  515  cd ../angular/src/loyalty3/
+  516  sudo git clone git@heroku.com:loyalty3.git -o heroku
+  517  heroku login
+  518  vi Procfile
+  519  foreman start
+  520  heroku create
+  521  git push heroku master
+  522  git push heroku master
+  523  git config --global user.name justincrosbie
+  524  ssh-add -l
+  525  ssh-add ~/.ssh/id_rsa
+  526  git push heroku master
+  527  ssh-add ~/.ssh/github_rsa
+  528  git push heroku master
+  529  git push heroku master
+  530  heroku ps:scale web=1
+  531  heroku ps
+  532  heroku open
+  533  heroku logs
+  534  heroku addons:add mongolab
+  535  heroku open
+  536  heroku logs
+  537  pwd
+  538  npm install
+  539  git push heroku master
+  540  git push heroku master
+  541  heroku ps
+  542  heroku open
+  543  heroku addons:add mongolab:sandbox
+  544  heroku open
+  545  heroku logs
+  546  mongo ds063307.mongolab.com:63307/jcajs -u jc -p dinosaur123
+  547  mongo ds063307.mongolab.com:63307/jcajs -u jc -p jc
+  548  git push heroku master
+  549  heroku config:set NODE_ENV=production
+  550  heroku open
+  551  heroku logs
+  552  heroku ps
+  553  heroku ps
+  554  git push heroku master
+  555  heroku logs
+  556  heroku logs
+  557  heroku logs
+  558  git push heroku master
+  559  heroku logs
+  560  git push heroku master
+  561  git push heroku +master
+  562  git push --force heroku master
+  563  git commit
+  564  git commit -a
+  565  git push heroku master
+  566  heroku logs
+  567  git commit -a
+  568  git push heroku master
+  569  git commit -a
+  570  git commit -a
+  571  git push heroku master
+  572  ifconfig
+  573  git commit -a
+  574  git push heroku master
+  575  git push heroku master
+  576  git push heroku master
+  577  git commit -a
+  578* 
+  579  git commit -a
+  580  git commit -a
+  581  git push heroku master
+  582  npm install
+  583  git commit -a
+  584  ls node_modules/mongoose/lib/schema/embedded.js 
+  585  git add node_modules/mongoose/lib/schema/embedded.js 
+  586  git commit -a
+  587  git push heroku master
+  588  heroku logs
+  589  git commit -a
+  590  git push heroku master
+  591  history > hist.txt

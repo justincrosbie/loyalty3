@@ -142,6 +142,159 @@ window.app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'views/persons/view.html' 
   })
   
+  .when('/rawpersons', 
+  {
+    templateUrl: 'views/rawpersons/list.html'
+  })
+  .when('/rawpersons/create', 
+  { 
+    templateUrl: 'views/rawpersons/create.html' 
+  })  
+  .when('/rawpersons/:rawpersonId/edit', 
+  { 
+    templateUrl: 'views/rawpersons/edit.html' 
+  })
+  .when('/rawpersons/:rawpersonId', 
+  { 
+    templateUrl: 'views/rawpersons/view.html' 
+  })
+
+  .when('/rawcompanys', 
+  {
+    templateUrl: 'views/rawcompanys/list.html'
+  })
+  .when('/rawcompanys/create', 
+  { 
+    templateUrl: 'views/rawcompanys/create.html' 
+  })  
+  .when('/rawcompanys/:rawcompanyId/edit', 
+  { 
+    templateUrl: 'views/rawcompanys/edit.html' 
+  })
+  .when('/rawcompanys/:rawcompanyId', 
+  { 
+    templateUrl: 'views/rawcompanys/view.html' 
+  })
+
+  .when('/bookings', 
+  {
+    templateUrl: 'views/bookings/list.html'
+  })
+  .when('/bookings/create', 
+  { 
+    templateUrl: 'views/bookings/create.html' 
+  })  
+  .when('/bookings/:bookingId/edit', 
+  { 
+    templateUrl: 'views/bookings/edit.html' 
+  })
+  .when('/bookings/:bookingId', 
+  { 
+    templateUrl: 'views/bookings/view.html' 
+  })
+
+  .when('/revenues', 
+  {
+    templateUrl: 'views/revenues/list.html'
+  })
+  .when('/revenues/create', 
+  { 
+    templateUrl: 'views/revenues/create.html' 
+  })  
+  .when('/revenues/:revenueId/edit', 
+  { 
+    templateUrl: 'views/revenues/edit.html' 
+  })
+  .when('/revenues/:revenueId', 
+  { 
+    templateUrl: 'views/revenues/view.html' 
+  })
+
+  .when('/loyaltySchemes', 
+  {
+    templateUrl: 'views/loyaltySchemes/list.html'
+  })
+  .when('/loyaltySchemes/create', 
+  { 
+    templateUrl: 'views/loyaltySchemes/create.html' 
+  })  
+  .when('/loyaltySchemes/:loyaltySchemeId/edit', 
+  { 
+    templateUrl: 'views/loyaltySchemes/edit.html' 
+  })
+  .when('/loyaltySchemes/:loyaltySchemeId', 
+  { 
+    templateUrl: 'views/loyaltySchemes/view.html' 
+  })
+  
+  .when('/loyaltyMembers', 
+  {
+    templateUrl: 'views/loyaltyMembers/list.html'
+  })
+  .when('/loyaltyMembers/create', 
+  { 
+    templateUrl: 'views/loyaltyMembers/create.html' 
+  })  
+  .when('/loyaltyMembers/:loyaltyMemberId/edit', 
+  { 
+    templateUrl: 'views/loyaltyMembers/edit.html' 
+  })
+  .when('/loyaltyMembers/:loyaltyMemberId', 
+  { 
+    templateUrl: 'views/loyaltyMembers/view.html' 
+  })
+  
+  .when('/loyaltyPoints', 
+  {
+    templateUrl: 'views/loyaltyPoints/list.html'
+  })
+  .when('/loyaltyPoints/create', 
+  { 
+    templateUrl: 'views/loyaltyPoints/create.html' 
+  })  
+  .when('/loyaltyPoints/:loyaltyPointId/edit', 
+  { 
+    templateUrl: 'views/loyaltyPoints/edit.html' 
+  })
+  .when('/loyaltyPoints/:loyaltyPointId', 
+  { 
+    templateUrl: 'views/loyaltyPoints/view.html' 
+  })
+  
+  .when('/loyaltyTransactions', 
+  {
+    templateUrl: 'views/loyaltyTransactions/list.html'
+  })
+  .when('/loyaltyTransactions/create', 
+  { 
+    templateUrl: 'views/loyaltyTransactions/create.html' 
+  })  
+  .when('/loyaltyTransactions/:loyaltyTransactionId/edit', 
+  { 
+    templateUrl: 'views/loyaltyTransactions/edit.html' 
+  })
+  .when('/loyaltyTransactions/:loyaltyTransactionId', 
+  { 
+    templateUrl: 'views/loyaltyTransactions/view.html' 
+  })
+  
+  .when('/loyaltyStatements', 
+  {
+    templateUrl: 'views/loyaltyStatements/list.html'
+  })
+  .when('/loyaltyStatements/create', 
+  { 
+    templateUrl: 'views/loyaltyStatements/create.html' 
+  })  
+  .when('/loyaltyStatements/:loyaltyStatementId/edit', 
+  { 
+    templateUrl: 'views/loyaltyStatements/edit.html' 
+  })
+  .when('/loyaltyStatements/:loyaltyStatementId', 
+  { 
+    templateUrl: 'views/loyaltyStatements/view.html' 
+  })
+  
     .otherwise({redirectTo: '/'});
 }]);
 

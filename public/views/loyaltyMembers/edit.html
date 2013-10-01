@@ -1,0 +1,46 @@
+<div ng-controller="LoyaltyMembersController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Modify LoyaltyMember</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-horizontal" ng-submit="update()" ng-init="findOne();populateLOVs()"> 
+      <div class="form-group">
+        <label class="control-label" for="loyaltyScheme">Scheme</label> 
+        <div class="controls"> 
+          <select ng-model="loyaltyMember.loyaltyScheme._id" name="loyaltyScheme" required="required" ng-options="c._id as c.name for c in loyaltySchemes"> 
+            <option value="">Choose a Scheme:</option>
+          </select> 
+        </div> 
+        <label class="control-label" for="person">Person</label> 
+        <div class="controls"> 
+          <select ng-model="loyaltyMember.person._id" name="person" required="required" ng-options="c._id as (c.firstname + ' ' + c.lastname) for c in persons"> 
+            <option value="">Choose a person:</option>
+          </select> 
+        </div> 
+        <label class="control-label" for="start">Start Date</label> 
+        <div class="controls"> 
+          <input type="text" ng-model="loyaltyMember.start" id="start" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control">
+        </div>      
+        <label class="control-label" for="end">End Date</label> 
+        <div class="controls"> 
+          <input type="text" ng-model="loyaltyMember.end" id="end" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control"> 
+        </div>      
+        <label class="control-label" for="card">Card Number</label> 
+        <div class="controls"> 
+          <input type="text" ng-model="loyaltyMember.card" id="card" placeholder="Card" class="form-control"> 
+        </div> 
+        <label class="control-label" for="password">Password</label> 
+        <div class="controls"> 
+          <input type="text" ng-model="loyaltyMember.password" id="password" placeholder="Password" class="form-control"> 
+        </div> 
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>

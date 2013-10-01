@@ -1,0 +1,28 @@
+<div ng-controller="RawcompanysController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Rawcompany</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Code: {{ rawcompany.code }}</p>
+      <p>Name: {{ rawcompany.name }}</p>
+      <p>IATA Number: {{ rawcompany.iata }}</p>
+      <p>Email: {{ rawcompany.email }}</p>
+      <p>Phone: {{ rawcompany.phone }}</p>
+      <p>Address1: {{ rawcompany.address1 }}</p>
+      <p>Address2: {{ rawcompany.address2 }}</p>
+      <p>Address3: {{ rawcompany.address3 }}</p>
+      <p>District: {{ rawcompany.suburb }}</p>
+      <p>City: {{ rawcompany.city }}</p>
+      <p>Postcode: {{ rawcompany.postcode }}</p>
+      <p>Country: {{ rawcompany.country.name }}</p>
+      <p>Site: {{ rawcompany.site.name }}</p>
+      <p>Customer: {{ rawcompany.customer.name }}</p>
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/rawcompanys">View all Rawcompanys</a>
+  </ul>
+</div>

@@ -1,0 +1,55 @@
+<div ng-controller="LoyaltyPointsController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Modify LoyaltyPoint</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-horizontal" ng-submit="update()" ng-init="findOne();populateLOVs()"> 
+      <div class="form-group">
+        <div class="form-group">
+          <label class="control-label" for="loyaltyScheme">Scheme</label> 
+          <div class="controls"> 
+            <select ng-model="loyaltyPoint.loyaltyScheme._id" name="loyaltyScheme" required="required" ng-options="c._id as c.name for c in loyaltySchemes"> 
+              <option value="">Choose a Scheme:</option>
+            </select> 
+          </div> 
+          <label class="control-label" for="start">Start Date</label> 
+          <div class="controls"> 
+            <input type="text" ng-model="loyaltyPoint.start" id="start" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control">
+          </div>      
+          <label class="control-label" for="end">End Date</label> 
+          <div class="controls"> 
+            <input type="text" ng-model="loyaltyPoint.end" id="end" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control"> 
+          </div>      
+          <label class="control-label" for="name">Name</label> 
+          <div class="controls"> 
+            <input type="text" ng-model="loyaltyPoint.name" id="name" placeholder="Name" class="form-control"> 
+          </div> 
+          <label class="control-label" for="code">Code</label> 
+          <div class="controls"> 
+            <input type="text" ng-model="loyaltyPoint.code" id="code" placeholder="Code" class="form-control"> 
+          </div> 
+          <label class="control-label" for="description">Description</label> 
+          <div class="controls"> 
+            <input type="text" ng-model="loyaltyPoint.description" id="description" placeholder="Description" class="form-control"> 
+          </div> 
+          <label class="control-label" for="active">Active</label> 
+          <div class="controls"> 
+            <div class="btn-group" ng-model="loyaltyPoint.active" bs-buttons-checkbox>
+              <button type="button" class="btn btn-default">Is Active</button>
+            </div>
+          </div> 
+          <label class="control-label" for="formula">Formula</label> 
+          <div class="controls"> 
+            <input type="text" ng-model="loyaltyPoint.formula" id="formula" placeholder="Formula" class="form-control"> 
+          </div> 
+        </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>

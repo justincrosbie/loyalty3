@@ -1,0 +1,22 @@
+<div ng-controller="RevenuesController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Revenue</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Code: {{ revenue.code }}</p>
+      <p>Date Booked: {{ revenue.datebooked | date }}</p>
+      <p>Start Date: {{ revenue.start | date }}</p>
+      <p>End Date: {{ revenue.end | date }}</p>
+      <p>Person: {{ revenue.rawperson.firstname + ' ' + revenue.rawperson.lastname }}</p>
+      <p>Company: {{ revenue.rawcompany.name }}</p>
+      <p>Site: {{ revenue.site.name }}</p>
+      <p>Customer: {{ revenue.customer.name }}</p>
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/revenues">View all Revenues</a>
+  </ul>
+</div>

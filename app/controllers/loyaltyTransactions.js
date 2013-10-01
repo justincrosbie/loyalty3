@@ -1,0 +1,68 @@
+var mongoose = require('mongoose')
+  , async = require('async')
+  , LoyaltyTransaction = mongoose.model('LoyaltyTransaction')
+  , _ = require('underscore')
+ 
+exports.create = function (req, res) {
+  var loyaltyTransaction = new LoyaltyTransaction(req.body)
+
+  loyaltyTransaction.loyaltyScheme = req.body.loyaltyScheme
+  loyaltyTransaction.loyaltyMember = req.body.loyaltyMember
+  loyaltyTransaction.loyaltyPoint = req.body.loyaltyPoint
+  loyaltyTransaction.loyaltyStatement = req.body.loyaltyStatement
+  loyaltyTransaction.booking = req.body.booking
+  loyaltyTransaction.revenue = req.body.revenue
+
+  loyaltyTransaction.createdby = req.user
+  loyaltyTransaction.created = new Date()
+
+  loyaltyTransaction.save()
+  res.jsonp(loyaltyTransaction)
+}
+ 
+exports.show = function(req, res){
+  res.jsonp(req.loyaltyTransaction);
+}
+ 
+exports.loyaltyTransaction = function(req, res, next, id){
+  var LoyaltyTransaction = mongoose.model('LoyaltyTransaction')
+  LoyaltyTransaction.load(id, function (err, loyaltyTransaction) {
+    if (err) return next(err)
+    if (!loyaltyTransaction) return next(new Error('Failed to load loyaltyTransaction ' + id))
+    req.loyaltyTransaction = loyaltyTransaction
+    next()
+  })
+}
+ 
+exports.all = function(req, res){
+ LoyaltyTransaction.find().populate('loyaltyScheme').exec(function(err, loyaltyTransactions) {
+   if (err) {
+      res.render('error', {status: 500});
+   } else {      
+      res.jsonp(loyaltyTransactions);
+   }
+ });
+}
+ 
+exports.update = function(req, res){
+  var loyaltyTransaction = req.loyaltyTransaction
+  loyaltyTransaction = _.extend(loyaltyTransaction, req.body)
+
+  loyaltyTransaction.modifiedby = req.user
+  loyaltyTransaction.modified = new Date()
+  
+  loyaltyTransaction.save(function(err) {
+    res.jsonp(loyaltyTransaction)
+  })
+}
+ 
+exports.destroy = function(req, res){
+  var loyaltyTransaction = req.loyaltyTransaction
+  loyaltyTransaction.remove(function(err){
+    if (err) {
+      res.render('error', {status: 500});
+    }  else {
+      res.jsonp(1);
+    }
+  })
+}

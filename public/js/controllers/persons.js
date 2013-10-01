@@ -25,8 +25,8 @@ window.angular.module('ngff.controllers.persons', [])
         Titles.query(query, function (titles) {
           $scope.titles = titles;
         });
-        Countrys.query(query, function (persons) {
-          $scope.persons = persons;
+        Companys.query(query, function (companys) {
+          $scope.companys = companys;
         });
         Countrys.query(query, function (countrys) {
           $scope.countrys = countrys;
