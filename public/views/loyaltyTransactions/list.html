@@ -1,0 +1,26 @@
+<div ng-controller="LoyaltyTransactionsController" ng-init="find()">
+  <ul>
+    <div class="page-header">
+      <h1>LoyaltyTransactions</h1>
+    </div>
+  </ul>
+  <ul>
+      <table class="table table-striped table-bordered table-condensed">
+          <tr><th>Scheme</th><th>Statement</th><th>Member</th><th>Point Scheme</th><th>Booking</th><th>Revenue</th><th>Points</th><th/><th/></tr>
+          <tr ng-repeat="loyaltyTransaction in loyaltyTransactions">
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyScheme.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyStatement.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyMember.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyPoint.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.booking.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.revenue.name}}</a></td>
+            <td>{{loyaltyTransaction.points}}</td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}/edit">Edit</a></td>
+            <td><a href="" ng-click="remove(loyaltyTransaction)" >Remove</a></td>
+          </tr>
+      </table>
+  </ul>
+  <ul>
+    <a href="#!/loyaltyTransactions/create" class="btn btn-primary">Create a new LoyaltyTransaction</a>
+  </ul>
+</div>
