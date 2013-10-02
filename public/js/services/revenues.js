@@ -1,5 +1,5 @@
 window.angular.module('ngff.services.revenues', [])
-  .factory('Revenue', ['$resource', 
+  .factory('Revenues', ['$resource', 
     function($resource){
       return $resource(
         'revenues/:revenueId', 

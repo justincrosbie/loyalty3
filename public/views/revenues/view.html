@@ -7,11 +7,10 @@
   <ul>
     <div  class="well well-small">
       <p>Code: {{ revenue.code }}</p>
-      <p>Date Booked: {{ revenue.datebooked | date }}</p>
-      <p>Start Date: {{ revenue.start | date }}</p>
-      <p>End Date: {{ revenue.end | date }}</p>
-      <p>Person: {{ revenue.rawperson.firstname + ' ' + revenue.rawperson.lastname }}</p>
-      <p>Company: {{ revenue.rawcompany.name }}</p>
+      <p>Date Spent: {{ revenue.datespent | date }}</p>
+      <p>Amount: {{ revenue.amount }}</p>
+      <p>Currency: {{ revenue.currency.name }}</p>
+      <p>Booking: {{ revenue.booking.code + ': ' + revenue.booking.start + ' - ' + revenue.booking.end }}</p>
       <p>Site: {{ revenue.site.name }}</p>
       <p>Customer: {{ revenue.customer.name }}</p>
     </div>

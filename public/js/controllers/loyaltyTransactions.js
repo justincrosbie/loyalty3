@@ -1,6 +1,6 @@
 window.angular.module('ngff.controllers.loyaltyTransactions', [])
-  .controller('LoyaltyTransactionsController', ['$scope','$routeParams','$location','Global','LoyaltySchemes','LoyaltyTransactions',
-    function($scope, $routeParams, $location, Global, LoyaltySchemes, LoyaltyTransactions) {
+  .controller('LoyaltyTransactionsController', ['$scope','$routeParams','$location','Global','LoyaltySchemes','LoyaltyStatements','LoyaltyMembers','LoyaltyPoints','LoyaltyTransactions','Bookings','Revenues',
+    function($scope, $routeParams, $location, Global, LoyaltySchemes, LoyaltyStatements, LoyaltyMembers, LoyaltyPoints, LoyaltyTransactions, Bookings, Revenues) {
  
       $scope.global = Global;
  
@@ -8,6 +8,21 @@ window.angular.module('ngff.controllers.loyaltyTransactions', [])
 
         LoyaltySchemes.query(query, function (loyaltySchemes) {
           $scope.loyaltySchemes = loyaltySchemes;
+        });
+        LoyaltyStatements.query(query, function (loyaltyStatements) {
+          $scope.loyaltyStatements = loyaltyStatements;
+        });
+        LoyaltyMembers.query(query, function (loyaltyMembers) {
+          $scope.loyaltyMembers = loyaltyMembers;
+        });
+        LoyaltyPoints.query(query, function (loyaltyPoints) {
+          $scope.loyaltyPoints = loyaltyPoints;
+        });
+        Bookings.query(query, function (bookings) {
+          $scope.bookings = bookings;
+        });
+        Revenues.query(query, function (revenues) {
+          $scope.revenues = revenues;
         });
       };
 

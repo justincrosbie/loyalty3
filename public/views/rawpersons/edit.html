@@ -44,7 +44,7 @@
             </div> 
             <label class="control-label" for="rawcompany">Company</label> 
             <div class="controls"> 
-              <select ng-model="rawperson.rawcompany._id" name="rawcompany" required="required" ng-options="c._id as c.name for c in companys"> 
+              <select ng-model="rawperson.rawcompany._id" name="rawcompany" required="required" ng-options="c._id as c.name + ' ' + c.code for c in rawcompanys"> 
                 <option value="">Choose a Company:</option>
               </select> 
             </div> 

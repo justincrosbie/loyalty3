@@ -17,9 +17,19 @@
             <div class="controls"> 
               <input type="text" ng-model="revenue.datespent" id="datespent" class="form-control" data-date-format="dd/mm/yyyy" bs-datepicker > 
             </div> 
+            <label class="control-label" for="amount">Amount</label> 
+            <div class="controls"> 
+              <input type="text" ng-model="revenue.amount" id="amount" class="form-control"> 
+            </div> 
+            <label class="control-label" for="currency">Currency</label> 
+            <div class="controls"> 
+              <select ng-model="revenue.currency" name="currency" required="required" ng-options="c._id as c.name for c in currencys"> 
+                <option value="">Choose a Currency:</option>
+              </select> 
+            </div> 
             <label class="control-label" for="booking">Booking</label> 
             <div class="controls"> 
-              <select ng-model="revenue.booking" name="booking" required="required" ng-options="c._id as c.name for c in rawcompanys"> 
+              <select ng-model="revenue.booking" name="booking" required="required" ng-options="c._id as c.code for c in bookings"> 
                 <option value="">Choose a Booking:</option>
               </select> 
             </div> 

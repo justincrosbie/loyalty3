@@ -6,13 +6,13 @@
   </ul>
   <ul>
       <table class="table table-striped table-bordered table-condensed">
-          <tr><th>Code</th><th>Date Booked</th><th>Start Date</th><th>End Date</th><th>Customer</th><th>Site</th><th/><th/></tr>
+          <tr><th>Code</th><th>Date Spent</th><th>Booking</th><th>Amount</th><th>Currency</th><th>Customer</th><th>Site</th><th/><th/></tr>
           <tr ng-repeat="revenue in revenues">
             <td><a href="#!/revenues/{{ revenue._id }}">{{revenue.code}}</a></td>
-            <td>{{revenue.datebooked | date}}</td>
-            <td>{{revenue.start | date}}</td>
-            <td>{{revenue.end | date}}</td>
-            <td><a href="#!/rawpersons/{{ revenue.rawperson._id }}">{{revenue.rawperson.firstname}} {{revenue.rawperson.middlename}} {{revenue.rawperson.lastname}}</a></td>
+            <td>{{revenue.datespent | date}}</td>
+            <td>{{revenue.booking.code}}: {{revenue.booking.start|date}} - {{revenue.booking.end|date}}</td>
+            <td>{{revenue.amount}}</td>
+            <td>{{revenue.currency.name}}</td>
             <td>{{revenue.customer.name}}</td>
             <td>{{revenue.site.name}}</td>
             <td><a href="#!/revenues/{{ revenue._id }}/edit">Edit</a></td>

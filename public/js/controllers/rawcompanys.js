@@ -36,7 +36,7 @@ window.angular.module('ngff.controllers.rawcompanys', [])
         }
         
         var rawcompany = new Rawcompanys({ 
-          code: this.rawperson.code,
+          code: this.rawcompany.code,
           name: this.rawcompany.name,
           iata: this.rawcompany.iata,
           email: this.rawcompany.email,

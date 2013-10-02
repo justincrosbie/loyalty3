@@ -7,6 +7,7 @@ exports.create = function (req, res) {
   var revenue = new Revenue(req.body)
 
   revenue.booking = req.body.booking
+  revenue.currency = req.body.currency
 
   revenue.createdby = req.user
   revenue.created = new Date()
@@ -30,7 +31,7 @@ exports.revenue = function(req, res, next, id){
 }
  
 exports.all = function(req, res){
- Revenue.find().populate('rawperson').populate('rawcompany').exec(function(err, revenues) {
+ Revenue.find().populate('booking').populate('currency').populate('site').populate('customer').exec(function(err, revenues) {
    if (err) {
       res.render('error', {status: 500});
    } else {      

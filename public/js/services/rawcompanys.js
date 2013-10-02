@@ -1,10 +1,10 @@
-window.angular.module('ngff.services.Rawcompanys', [])
+window.angular.module('ngff.services.rawcompanys', [])
   .factory('Rawcompanys', ['$resource', 
     function($resource){
       return $resource(
-        'Rawcompanys/:RawcompanyId', 
+        'rawcompanys/:rawcompanyId', 
         {
-          RawcompanyId:'@_id'
+          rawcompanyId:'@_id'
         }, 
         {
           update: {method: 'PUT'}

@@ -2,18 +2,23 @@
   .controller('HeaderController', ['$scope', 'Global',
     function ($scope, Global) {
       $scope.global = Global;
+ 		$scope.currentAppName = Global.currentAppName();
 
       $scope.changeNavbar = function(link) {
 
       	if ( link == 'loyalty' ) {
 	        $scope.navbarEntries = $scope.navbarEntries2;
 	        $scope.navbarAdminEntries = $scope.navbarAdminEntries2;
+      	} else if ( link == 'bookingmanagement' ) {
+	        $scope.navbarEntries = $scope.navbarEntries3;
+	        $scope.navbarAdminEntries = $scope.navbarAdminEntries3;
       	} else {
 	        $scope.navbarEntries = $scope.navbarEntries1;
 	        $scope.navbarAdminEntries = $scope.navbarAdminEntries1;
       	}
 
       	Global.currentApp(link);
+ 		$scope.currentAppName = Global.currentAppName();
       }
  
 
@@ -21,6 +26,10 @@
 		  {
 		    "title": "Guest Management",
 		    "link": "guestmanagement"
+		  },
+		  {
+		    "title": "Booking Management",
+		    "link": "bookingmanagement"
 		  },
 		  {
 		    "title": "Loyalty 3.0",
@@ -98,6 +107,48 @@
 			  {
 			    "title": "Reports",
 			    "link": "loyaltyReports"
+			  }
+			];
+
+		$scope.navbarEntries3 = [
+			  {
+			    "title": "Raw Companys",
+			    "link": "rawcompanys"
+			  },
+			  {
+			    "title": "Raw Person",
+			    "link": "rawpersons"
+			  },
+			  {
+			    "title": "Bookings",
+			    "link": "bookings"
+			  },
+			  {
+			    "title": "Revenue Transactions",
+			    "link": "revenues"
+			  }
+			];
+
+		$scope.navbarAdminEntries3 = [
+			  {
+			    "title": "Rate Codes",
+			    "link": "ratecodes"
+			  },
+			  {
+			    "title": "Market Codes",
+			    "link": "marketcodes"
+			  },
+			  {
+			    "title": "Revenue Codes",
+			    "link": "revenuecodes"
+			  },
+			  {
+			    "title": "Booking Types",
+			    "link": "bookingtypes"
+			  },
+			  {
+			    "title": "Booking Statuses",
+			    "link": "bookingstatuses"
 			  }
 			];
 

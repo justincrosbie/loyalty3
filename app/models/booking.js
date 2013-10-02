@@ -20,7 +20,7 @@ var BookingSchema = new Schema({
  
  BookingSchema.statics = {
    load: function (id, cb) {
-     this.findOne({ _id : id }).populate('rawperson').populate('rawcompany').exec(cb);
+     this.findOne({ _id : id }).populate('rawperson').populate('rawcompany').populate('site').populate('customer').exec(cb);
    }
  };
  

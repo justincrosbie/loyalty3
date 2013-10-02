@@ -1,3 +1,31 @@
 <section ng-controller="IndexController">
-	<h3>{{intromessage}}</h3>
+
+  <div ng-show="global.isSignedIn()">
+    <h3>{{intromessage}}</h3>
+  </div>
+  <div ng-hide="global.isSignedIn()">
+    <carousel interval="myInterval">
+      <slide>
+        <img ng-src="http://eofdreams.com/data_images/dreams/hotel/hotel-04.jpg" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide 1</h4>
+          <p>Caption1</p>
+        </div>
+      </slide>
+      <slide>
+        <img ng-src="http://eofdreams.com/data_images/dreams/hotel/hotel-03.jpg" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide 2</h4>
+          <p>Caption2</p>
+        </div>
+      </slide>
+      <slide>
+        <img ng-src="http://eofdreams.com/data_images/dreams/hotel/hotel-01.jpg" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide 3</h4>
+          <p>Caption3</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
 </section>

@@ -6,6 +6,8 @@ var mongoose = require('mongoose')
 var RevenueSchema = new Schema({
   code: {type : String},
   datespent: {type : Date},
+  amount: {type : Number},
+  currency: {type: Schema.ObjectId, ref: 'Currency'},
   booking: {type: Schema.ObjectId, ref: 'Booking'},
   site: {type: Schema.ObjectId, ref: 'Site'},
   customer: {type: Schema.ObjectId, ref: 'Customer'},
@@ -17,7 +19,7 @@ var RevenueSchema = new Schema({
  
  RevenueSchema.statics = {
    load: function (id, cb) {
-     this.findOne({ _id : id }).populate('booking').exec(cb);
+     this.findOne({ _id : id }).populate('booking').populate('currency').populate('site').populate('customer').exec(cb);
    }
  };
  

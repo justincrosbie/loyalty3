@@ -5,10 +5,10 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav" ng-show="global.isSignedIn()">
 				<li class="dropdown">
 					<a href="#" class="navbar-brand dropdown-toggle" data-toggle="dropdown">
-					  Loyalty 3.0 <b class="caret"></b>
+					  {{ currentAppName }} <b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu">
 				      <li ng-repeat="entry in apps" ng-show="global.isSignedIn()"><a href="/" ng-click="changeNavbar('{{entry.link}}')">{{entry.title}}</a></li>

@@ -31,7 +31,7 @@ exports.booking = function(req, res, next, id){
 }
  
 exports.all = function(req, res){
- Booking.find().populate('rawperson').populate('rawcompany').exec(function(err, bookings) {
+ Booking.find().populate('rawperson').populate('rawcompany').populate('site').populate('customer').exec(function(err, bookings) {
    if (err) {
       res.render('error', {status: 500});
    } else {      
