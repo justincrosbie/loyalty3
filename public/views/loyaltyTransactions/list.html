@@ -10,10 +10,10 @@
           <tr ng-repeat="loyaltyTransaction in loyaltyTransactions">
             <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyScheme.name}}</a></td>
             <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyStatement.name}}</a></td>
-            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyMember.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyMember.card}}</a></td>
             <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyPoint.name}}</a></td>
-            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.booking.name}}</a></td>
-            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.revenue.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.booking.code}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.revenue.code}}</a></td>
             <td>{{loyaltyTransaction.points}}</td>
             <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}/edit">Edit</a></td>
             <td><a href="" ng-click="remove(loyaltyTransaction)" >Remove</a></td>

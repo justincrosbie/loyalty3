@@ -3,12 +3,15 @@ window.angular.module('ngff.controllers.loyaltyPoints', [])
     function($scope, $routeParams, $location, Global, LoyaltySchemes, LoyaltyPoints) {
  
       $scope.global = Global;
+      $scope.active = false;
  
+
       $scope.populateLOVs = function(query) {
 
         LoyaltySchemes.query(query, function (loyaltySchemes) {
           $scope.loyaltySchemes = loyaltySchemes;
         });
+
       };
 
       $scope.create = function () {

@@ -35,7 +35,7 @@ exports.loyaltyTransaction = function(req, res, next, id){
 }
  
 exports.all = function(req, res){
- LoyaltyTransaction.find().populate('loyaltyScheme').exec(function(err, loyaltyTransactions) {
+ LoyaltyTransaction.find().populate('loyaltyScheme').populate('loyaltyMember').populate('loyaltyPoint').populate('loyaltyStatement').populate('booking').populate('revenue').exec(function(err, loyaltyTransactions) {
    if (err) {
       res.render('error', {status: 500});
    } else {      

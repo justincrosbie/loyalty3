@@ -3,7 +3,7 @@ window.angular.module('ngff.controllers.loyaltyTransactions', [])
     function($scope, $routeParams, $location, Global, LoyaltySchemes, LoyaltyStatements, LoyaltyMembers, LoyaltyPoints, LoyaltyTransactions, Bookings, Revenues) {
  
       $scope.global = Global;
- 
+
       $scope.populateLOVs = function(query) {
 
         LoyaltySchemes.query(query, function (loyaltySchemes) {

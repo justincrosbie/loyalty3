@@ -27,7 +27,7 @@
           </div>      
             <label class="control-label" for="rawperson">Person</label> 
             <div class="controls"> 
-              <select ng-model="booking.rawperson" name="rawperson" required="required" ng-options="c._id as c.name for c in rawpersons"> 
+              <select ng-model="booking.rawperson" name="rawperson" required="required" ng-options="c._id as c.firstname + ' ' + c.lastname for c in rawpersons"> 
                 <option value="">Choose a Person:</option>
               </select> 
             </div> 

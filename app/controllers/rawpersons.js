@@ -30,6 +30,7 @@ exports.rawperson = function(req, res, next, id){
   Rawperson.load(id, function (err, rawperson) {
     if (err) return next(err)
     if (!rawperson) return next(new Error('Failed to load rawperson ' + id))
+
     req.rawperson = rawperson
     next()
   })
