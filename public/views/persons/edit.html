@@ -41,7 +41,7 @@
             </div> 
             <label class="control-label" for="company">Company</label> 
             <div class="controls"> 
-              <select ng-model="person.company._id" name="company" required="required" ng-options="c._id as c.name for c in companys"> 
+              <select ng-model="person.company._id" name="company" ng-options="c._id as c.name for c in companys"> 
                 <option value="">Choose a Company:</option>
               </select> 
             </div> 
@@ -81,7 +81,7 @@
             </div> 
             <label class="control-label" for="homecountry">Home Country</label> 
             <div class="controls"> 
-              <select ng-model="person.homecountry._id" name="homecountry" required="required" ng-options="c._id as c.name for c in countrys"> 
+              <select ng-model="person.homecountry._id" name="homecountry" ng-options="c._id as c.name for c in countrys"> 
                 <option value="">Choose a Country:</option>
               </select> 
             </div> 
@@ -117,7 +117,7 @@
             </div> 
             <label class="control-label" for="workcountry">Work Country</label> 
             <div class="controls"> 
-              <select ng-model="person.workcountry._id" name="workcountry" required="required" ng-options="c._id as c.name for c in countrys"> 
+              <select ng-model="person.workcountry._id" name="workcountry" ng-options="c._id as c.name for c in countrys"> 
                 <option value="">Choose a Country:</option>
               </select> 
             </div> 

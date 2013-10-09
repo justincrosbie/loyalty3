@@ -6,8 +6,6 @@ var mongoose = require('mongoose')
 exports.create = function (req, res) {
   var customer = new Customer(req.body)
 
-  customer.subscription = req.body.subscription
-
   customer.createdby = req.user
   customer.created = new Date()
 

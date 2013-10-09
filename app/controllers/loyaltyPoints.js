@@ -6,8 +6,6 @@ var mongoose = require('mongoose')
 exports.create = function (req, res) {
   var loyaltyPoint = new LoyaltyPoint(req.body)
 
-  loyaltyPoint.loyaltyScheme = req.body.loyaltyScheme
-
   loyaltyPoint.createdby = req.user
   loyaltyPoint.created = new Date()
 

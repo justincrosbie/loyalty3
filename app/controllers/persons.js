@@ -6,13 +6,6 @@ var mongoose = require('mongoose')
 exports.create = function (req, res) {
   var person = new Person(req.body)
 
-  person.title = req.body.title
-  person.customer = req.body.customer
-  person.company = req.body.company
-  person.homecountry = req.body.homecountry
-  person.workcountry = req.body.workcountry
-  person.site = req.body.site
-
   person.createdby = req.user
   person.created = new Date()
 
@@ -36,6 +29,18 @@ exports.person = function(req, res, next, id){
  
 exports.all = function(req, res){
  Person.find().populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
+   if (err) {
+      res.render('error', {status: 500});
+   } else {      
+      res.jsonp(customers);
+   }
+ });
+}
+ 
+exports.query = function(req, res){
+  console.log(req.query);
+
+ Person.find(req.query.q).populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
    if (err) {
       res.render('error', {status: 500});
    } else {      

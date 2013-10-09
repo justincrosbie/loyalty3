@@ -6,9 +6,6 @@ var mongoose = require('mongoose')
 exports.create = function (req, res) {
   var booking = new Booking(req.body)
 
-  booking.rawperson = req.body.rawperson
-  booking.rawcompany = req.body.rawcompany
-
   booking.createdby = req.user
   booking.created = new Date()
 

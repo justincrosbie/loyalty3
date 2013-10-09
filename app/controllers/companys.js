@@ -6,10 +6,6 @@ var mongoose = require('mongoose')
 exports.create = function (req, res) {
   var company = new Company(req.body)
 
-  company.country = req.body.country
-  company.customer = req.body.customer
-  company.site = req.body.site
-
   company.createdby = req.user
   company.created = new Date()
 

@@ -1,20 +1,8 @@
 window.angular.module('ngff.directives', [])
-  .directive('positions', function() {
+  .directive('personselect', function() {
     return {
       restrict: "E",
-      templateUrl: "views/players/positionselect.html"
+      templateUrl: "views/persons/personselect.html"
     };
   })
-	.directive('nflteams', function() {
-	  return {
-	    restrict: "E",
-	    templateUrl: "views/players/nflteamselect.html"
-	  };
-	})
-	.directive('searchlimit', function() {
-	  return {
-	    restrict: "E",
-	    templateUrl: "views/players/searchlimitselect.html"
-	  };
-	})
 ;

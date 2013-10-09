@@ -6,8 +6,6 @@ var mongoose = require('mongoose')
 exports.create = function (req, res) {
   var country = new Country(req.body)
 
-  country.currency = req.body.currency
-
   country.createdby = req.user
   country.created = new Date()
 

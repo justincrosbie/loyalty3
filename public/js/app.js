@@ -1,4 +1,4 @@
-window.app = angular.module('loyalty3', ['ngCookies', 'ngResource', 'ui.bootstrap', '$strap.directives', 'ngRoute', 'ngAnimate', 
+window.app = angular.module('loyalty3', ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.select2', '$strap.directives', 'ngRoute', 'ngAnimate', 
 										'ngff.controllers', 'ngff.directives', 'ngff.services', 'loadingOnAJAX']);
 
 // bundling dependencies

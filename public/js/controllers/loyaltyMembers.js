@@ -59,4 +59,42 @@ window.angular.module('ngff.controllers.loyaltyMembers', [])
           }
         }
       };
+
+      $scope.personFormatSelection = function (person) { 
+        return person.firstname + " " + person.lastname;
+      }
+
+      $scope.personSelect = {
+        placeholder: "Search for a Person",
+        minimumInputLength: 3,
+        ajax: {
+            url: "/persons",
+            data: function (term, page) { // page is the one-based page number tracked by Select2
+                return {
+                    q: term.split(' ').length > 1 ? 
+                      { 
+                        firstname : { $regex: term.split(' ')[0] + '.*', $options: 'i' },
+                        lastname : { $regex: term.split(' ')[1] + '.*', $options: 'i' } 
+                      } :
+                      { 
+                        firstname : { $regex: term.split(' ')[0] + '.*', $options: 'i' }
+                      }
+                    , //search term
+                    page_limit: 10, // page size
+                    page: page // page number
+                };
+            },
+            results: function (data, page) {
+                var more = (page * 10) < data.length; // whether or not there are more results available
+
+                // notice we return the value of more so Select2 knows if more results can be loaded
+                return {results: data, more: more};
+            }
+        },
+        id: function (e) { return e._id; },
+        formatResult: function (person) { return person.firstname + " " + person.lastname; }, // omitted for brevity, see the source of this page
+        formatSelection: $scope.personFormatSelection, // omitted for brevity, see the source of this page
+        escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displayi        
+      };
+
     }]);
