@@ -23,7 +23,7 @@ window.angular.module('ngff.controllers.loyaltyPoints', [])
           formula: this.loyaltyPoint.formula,
           start: this.loyaltyPoint.start,
           end: this.loyaltyPoint.end,
-          loyaltyScheme: this.loyaltyPoint.loyaltyScheme
+          loyaltyScheme: this.loyaltyPoint.loyaltyScheme._id
         });
  
         loyaltyPoint.$save(function (response) {

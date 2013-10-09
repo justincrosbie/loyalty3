@@ -30,7 +30,7 @@ window.angular.module('ngff.controllers.loyaltyTransactions', [])
         var loyaltyTransaction = new LoyaltyTransactions({ 
           comments: this.loyaltyTransaction.comments,
           points: this.loyaltyTransaction.points,
-          loyaltyScheme: this.loyaltyTransaction.loyaltyScheme,
+          loyaltyScheme: this.loyaltyTransaction.loyaltyScheme._id,
           loyaltyStatement: this.loyaltyTransaction.loyaltyStatement,
           loyaltyPoint: this.loyaltyTransaction.loyaltyPoint,
           loyaltyMember: this.loyaltyTransaction.loyaltyMember,

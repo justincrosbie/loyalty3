@@ -38,7 +38,9 @@ exports.all = function(req, res){
 }
  
 exports.query = function(req, res){
- Person.find(req.query.q).populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
+  console.log(req.query);
+  
+ Person.find(req.query.q).skip((req.query.page-1)*req.query.page_limit).limit(req.query.page_limit).populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
    if (err) {
       res.render('error', {status: 500});
    } else {      

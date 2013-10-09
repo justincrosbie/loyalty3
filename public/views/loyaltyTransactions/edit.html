@@ -9,9 +9,7 @@
         <div class="form-group">
           <label class="control-label" for="loyaltyScheme">Scheme</label> 
           <div class="controls"> 
-            <select ng-model="loyaltyTransaction.loyaltyScheme._id" name="loyaltyScheme" required="required" ng-options="c._id as c.name for c in loyaltySchemes"> 
-              <option value="">Choose a Scheme:</option>
-            </select> 
+              <input type="hidden" ui-select2="global.schemeSelect" ng-model="loyaltyTransaction.loyaltyScheme" ng-required="true"/>
           </div> 
           <div class="controls"> 
             <select ng-model="loyaltyTransaction.loyaltyStatement._id" name="loyaltyStatement" ng-options="c._id as c.name for c in loyaltyStatements"> 

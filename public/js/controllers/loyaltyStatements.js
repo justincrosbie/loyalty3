@@ -19,7 +19,7 @@ window.angular.module('ngff.controllers.loyaltyStatements', [])
           active: this.loyaltyStatement.active,
           start: this.loyaltyStatement.start,
           end: this.loyaltyStatement.end,
-          loyaltyScheme: this.loyaltyStatement.loyaltyScheme
+          loyaltyScheme: this.loyaltyStatement.loyaltyScheme._id
         });
  
         loyaltyStatement.$save(function (response) {
