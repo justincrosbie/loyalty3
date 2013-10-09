@@ -1,0 +1,19 @@
+{
+  "name": "angular-selectize",
+  "devDependencies": {
+    "selectize": "~0.3.2",
+    "jquery": "~2.0.2",
+    "angular-latest": "~1.1.5"
+  },
+  "homepage": "https://github.com/paolodm/angular-selectize",
+  "_release": "master",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "45fa0ef00b5f5838c3facf78b4cec82fc56386c6"
+  },
+  "_source": "git://github.com/paolodm/angular-selectize.git",
+  "_target": "*",
+  "_originalSource": "angular-selectize",
+  "_direct": true
+}
