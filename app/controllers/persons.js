@@ -38,8 +38,6 @@ exports.all = function(req, res){
 }
  
 exports.query = function(req, res){
-  console.log(req.query);
-
  Person.find(req.query.q).populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
    if (err) {
       res.render('error', {status: 500});

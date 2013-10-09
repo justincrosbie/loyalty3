@@ -15,9 +15,7 @@
         </div> 
         <label class="control-label" for="person">Person</label> 
         <div class="controls"> 
-          <select ng-model="loyaltyMember.person._id" name="person" required="required" ng-options="c._id as (c.firstname + ' ' + c.lastname) for c in persons"> 
-            <option value="">Choose a person:</option>
-          </select> 
+          <input ui-select2="personSelect" ng-model="loyaltyMember.person" />
         </div> 
         <label class="control-label" for="start">Start Date</label> 
         <div class="controls"> 

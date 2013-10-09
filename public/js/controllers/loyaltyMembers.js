@@ -6,34 +6,30 @@ window.angular.module('ngff.controllers.loyaltyMembers', [])
  
       $scope.populateLOVs = function(query) {
 
-        Persons.query(query, function (persons) {
-          $scope.persons = persons;
-        });
         LoyaltySchemes.query(query, function (loyaltySchemes) {
           $scope.loyaltySchemes = loyaltySchemes;
         });
       };
 
       $scope.create = function () {
+
         var loyaltyMember = new LoyaltyMembers({ 
-          card: this.loyaltyMember.card,
-          password: this.loyaltyMember.password,
+          loyaltyScheme: this.loyaltyMember.loyaltyScheme,
+          person: this.loyaltyMember.person._id,
           start: this.loyaltyMember.start,
           end: this.loyaltyMember.end,
-          loyaltyScheme: this.loyaltyMember.loyaltyScheme,
-          person: this.loyaltyMember.person
+          card: this.loyaltyMember.card,
+          password: this.loyaltyMember.password
         });
- 
+
         loyaltyMember.$save(function (response) {
           $location.path("loyaltyMembers/" + response._id);
         });
- 
-        this.name = "";
       };
  
       $scope.update = function () {
         var loyaltyMember = $scope.loyaltyMember;
- 
+
         loyaltyMember.$update(function () {
           $location.path('loyaltyMembers/' + loyaltyMember._id);
         });
@@ -59,10 +55,6 @@ window.angular.module('ngff.controllers.loyaltyMembers', [])
           }
         }
       };
-
-      $scope.personFormatSelection = function (person) { 
-        return person.firstname + " " + person.lastname;
-      }
 
       $scope.personSelect = {
         placeholder: "Search for a Person",
@@ -91,9 +83,19 @@ window.angular.module('ngff.controllers.loyaltyMembers', [])
                 return {results: data, more: more};
             }
         },
+        initSelection: function(element, callback) {
+            // the input tag has a value attribute preloaded that points to a preselected movie's id
+            // this function resolves that id attribute to an object that select2 can render
+            // using its formatResult renderer - that way the movie name is shown preselected
+            var id=$(element).val();
+            alert(id);
+            if (id!=="") {
+                $.ajax("/persons/"+id).done(function(data) { callback(data); });
+            }
+        },
         id: function (e) { return e._id; },
         formatResult: function (person) { return person.firstname + " " + person.lastname; }, // omitted for brevity, see the source of this page
-        formatSelection: $scope.personFormatSelection, // omitted for brevity, see the source of this page
+        formatSelection: function (person) { return person.firstname + " " + person.lastname; }, // omitted for brevity, see the source of this page
         escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displayi        
       };
 
