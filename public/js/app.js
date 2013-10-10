@@ -1,6 +1,14 @@
 window.app = angular.module('loyalty3', ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.select2', '$strap.directives', 'ngRoute', 'ngAnimate', 
 										'ngff.controllers', 'ngff.directives', 'ngff.services', 'loadingOnAJAX']);
 
+angular.module("template/pagination/pagination.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("template/pagination/pagination.html",
+    "<ul class=\"pagination\">\n" +
+    "  <li ng-repeat=\"page in pages\" ng-class=\"{active: page.active, disabled: page.disabled}\"><a ng-click=\"selectPage(page.number)\">{{page.text}}</a></li>\n" +
+    "</ul>\n" +
+    "");
+}]);
+
 // bundling dependencies
 window.angular.module('ngff.controllers', 
 										[

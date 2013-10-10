@@ -1,8 +1,13 @@
-<div ng-controller="PersonsController" ng-init="find()">
+<div ng-controller="PersonsController" ng-init="findPaged()">
   <ul>
     <div class="page-header">
       <h1>Persons</h1>
     </div>
+  </ul>
+  <ul>
+    <pagination total-items="bigTotalItems" page="bigCurrentPage" max-size="maxSize" class="pagination-small" 
+      boundary-links="true" rotate="false" num-pages="numPages" on-select-page="pageChanged(page)" >
+    </pagination>
   </ul>
   <ul>
       <table class="table table-striped table-bordered table-condensed">
@@ -15,6 +20,11 @@
             <td><a href="" ng-click="remove(person)" >Remove</a></td>
           </tr>
       </table>
+  </ul>
+  <ul>
+    <pagination total-items="bigTotalItems" page="bigCurrentPage" max-size="maxSize" class="pagination-small" 
+      boundary-links="true" rotate="false" num-pages="numPages" on-select-page="pageChanged(page)" >
+    </pagination>
   </ul>
   <ul>
     <a href="#!/persons/create" class="btn btn-primary">Create a new Person</a>

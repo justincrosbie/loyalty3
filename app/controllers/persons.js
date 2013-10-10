@@ -28,6 +28,8 @@ exports.person = function(req, res, next, id){
 }
  
 exports.all = function(req, res){
+  console.log('exports.all');
+  console.log(req.query);
  Person.find().populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
    if (err) {
       res.render('error', {status: 500});
@@ -38,8 +40,9 @@ exports.all = function(req, res){
 }
  
 exports.query = function(req, res){
+  console.log('exports.query!!');
   console.log(req.query);
-  
+
  Person.find(req.query.q).skip((req.query.page-1)*req.query.page_limit).limit(req.query.page_limit).populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
    if (err) {
       res.render('error', {status: 500});

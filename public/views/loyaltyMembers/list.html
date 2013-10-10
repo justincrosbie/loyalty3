@@ -5,6 +5,7 @@
     </div>
   </ul>
   <ul>
+    <div class="mypanel">
       <table class="table table-striped table-bordered table-condensed">
           <tr><th>Scheme</th><th>First Name</th><th>Last Name</th><th>Card</th><th>Start Date</th><th>End Date</th><th>Points</th><th/><th/></tr>
           <tr ng-repeat="loyaltyMember in loyaltyMembers">
@@ -19,6 +20,7 @@
             <td><a href="" ng-click="remove(loyaltyMember)" >Remove</a></td>
           </tr>
       </table>
+    </div>
   </ul>
   <ul>
     <a href="#!/loyaltyMembers/create" class="btn btn-primary">Create a new LoyaltyMember</a>
