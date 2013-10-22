@@ -15,9 +15,10 @@
   </ul>
   <ul>
       <table class="table table-striped table-bordered table-condensed">
-          <tr><th>Name</th><th>Customer</th><th>Site</th><th/><th/></tr>
+          <tr><th>Name</th><th>Company</th><th>Customer</th><th>Site</th><th/><th/></tr>
           <tr ng-repeat="person in persons">
             <td><a href="#!/persons/{{ person._id }}">{{person.firstname}} {{person.middlename}} {{person.lastname}}</a></td>
+            <td>{{person.company.name}}</td>
             <td>{{person.customer.name}}</td>
             <td>{{person.site.name}}</td>
             <td><a href="#!/persons/{{ person._id }}/edit">Edit</a></td>
