@@ -11,9 +11,7 @@
           <tab heading="Details" select="detailsSelected(person)">
             <label class="control-label" for="title">Title</label> 
             <div class="controls"> 
-              <select ng-model="person.title" name="title" required="required" ng-options="c._id as c.name for c in titles"> 
-                <option value="">Choose a Title:</option>
-              </select> 
+              <input type="hidden" ui-select2="global.titleSelect" ng-model="person.title" ng-required="true"/>
             </div> 
             <label class="control-label" for="firstname">First Name</label> 
             <div class="controls"> 
@@ -40,9 +38,7 @@
             </div> 
             <label class="control-label" for="company">Company</label> 
             <div class="controls"> 
-              <select ng-model="person.company" name="company" ng-options="c._id as c.name for c in companys"> 
-                <option value="">Choose a Company:</option>
-              </select> 
+              <input type="hidden" ui-select2="global.companySelect" ng-model="person.company" ng-required="true"/>
             </div> 
           </tab>
           <tab heading="Home Contact" select="contactHomeSelected(person)">

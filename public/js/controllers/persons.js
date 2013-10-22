@@ -46,14 +46,14 @@ window.angular.module('ngff.controllers.persons', [])
         }
 
         var person = new Persons({ 
-          title: this.person.title,
+          title: this.person.title._id,
           firstname: this.person.firstname,
           middlename: this.person.middlename,
           lastname: this.person.lastname,
           gender: this.person.gender,
           dob: this.person.dob,
           email: this.person.email,
-          company: this.person.company,
+          company: this.person.company._id,
 
           homephone: this.person.homephone,
           homeaddress1: this.person.homeaddress1,

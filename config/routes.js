@@ -77,7 +77,8 @@ module.exports = function (app, passport, auth) {
 
   // company routes
   var companys = require('../app/controllers/companys')  
-  app.get('/companys', companys.all)
+  app.get('/companys', companys.query)
+  app.get('/companys/count', companys.queryCount)
   app.post('/companys', auth.requiresLogin, companys.create)
   app.get('/companys/:companyId', companys.show)
   app.put('/companys/:companyId', auth.requiresLogin, companys.update)
