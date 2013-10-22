@@ -94,19 +94,38 @@ window.angular.module('ngff.controllers.persons', [])
  
       $scope.find = function (query) {
         Persons.query(query, function (persons) {
-          $scope.persons = persons;
+          $scope.persons = persons.data;
         });
       };
  
       $scope.currentPage = 1;
+      $scope.totalItems = 100;
+      $scope.maxSize = 5;
+      
       $scope.findPaged = function () {
+        var term = $scope.query || '';
+        var fn = term.split(' ')[0] + '.*';
+        var ln = term.split(' ')[1] + '.*';
+
         var query = {
+            q2: term.split(' ').length > 1 ? 
+              { 
+                firstname : { regex: fn, options: 'i' },
+                lastname : { regex: ln, options: 'i' }
+              } :
+              { 
+                firstname : { regex: fn, options: 'i' }
+              }
+            , //search term
             page_limit: 10, // page size
             page: $scope.currentPage // page number
         };
 
         Persons.query(query, function (persons) {
-          $scope.persons = persons;
+          $scope.persons = persons.data;
+          if ( $scope.currentPage == 1 ) {
+            $scope.totalItems = persons.count;
+          }
         });
       };
  
@@ -130,14 +149,8 @@ window.angular.module('ngff.controllers.persons', [])
         $scope.findPaged();
       };
 
-         $scope.totalItems = 64;
-      $scope.maxSize = 5;
-      
       $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
       };
-
-      $scope.bigTotalItems = 175;
-      $scope.bigCurrentPage = 1;
 
     }]);

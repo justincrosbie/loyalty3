@@ -6,7 +6,8 @@ window.angular.module('ngff.services.persons', [])
         {
           personId:'@_id'
         }, 
-        {
+        { 
+          query:  {method:'GET', isArray:false},
           update: {method: 'PUT'}
         }
       )

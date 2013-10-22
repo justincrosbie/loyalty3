@@ -49,11 +49,11 @@ window.angular.module('ngff.services.global', [])
                     page: page // page number
                 };
             },
-            results: function (data, page) {
-                var more = data.length > 0; // whether or not there are more results available
+            results: function (responseObj, page) {
+                var more = responseObj.data.length > 0; // whether or not there are more results available
 
                 // notice we return the value of more so Select2 knows if more results can be loaded
-                return {results: data, more: more};
+                return {results: responseObj.data, more: more};
             }
         },
         initSelection: function(element, callback) {
@@ -69,6 +69,7 @@ window.angular.module('ngff.services.global', [])
         escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displayi        
       },
       schemeSelect: {
+        minimumResultsForSearch: -1,
         placeholder: "Select a Scheme",
         ajax: {
             url: "/loyaltySchemes",

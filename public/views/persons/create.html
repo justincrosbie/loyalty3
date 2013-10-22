@@ -1,11 +1,11 @@
-<div ng-controller="PersonsController"> 
+<div class="mypanel" ng-controller="PersonsController"> 
   <ul>
     <div class="page-header">
       <h1>Create New Person</h1>
     </div>
   </ul>
   <ul>
-    <form class="form-horizontal" ng-submit="create()" ng-init="populateLOVs()"> 
+    <form class="form-vertical" ng-submit="create()" ng-init="populateLOVs()"> 
       <div class="form-group">
         <tabset>
           <tab heading="Details" select="detailsSelected(person)">
@@ -36,7 +36,7 @@
             </div> 
             <label class="control-label" for="dob">Date of Birth</label> 
             <div class="controls"> 
-              <input type="text" ng-model="person.dob" id="dob" class="form-control" data-date-format="dd/mm/yyyy" bs-datepicker > 
+              <input type="text" ng-model="person.dob" id="dob" data-date-format="dd/mm/yyyy" bs-datepicker > 
             </div> 
             <label class="control-label" for="company">Company</label> 
             <div class="controls"> 

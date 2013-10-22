@@ -28,8 +28,6 @@ exports.person = function(req, res, next, id){
 }
  
 exports.all = function(req, res){
-  console.log('exports.all');
-  console.log(req.query);
  Person.find().populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
    if (err) {
       res.render('error', {status: 500});
@@ -39,19 +37,63 @@ exports.all = function(req, res){
  });
 }
  
-exports.query = function(req, res){
-  console.log('exports.query!!');
-  console.log(req.query);
-
- Person.find(req.query.q).skip((req.query.page-1)*req.query.page_limit).limit(req.query.page_limit).populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
+exports.queryCount = function(req, res){
+ Person.find(req.query.q).count().exec(function(err, count) {
    if (err) {
       res.render('error', {status: 500});
-   } else {      
-      res.jsonp(customers);
+   } else {    
+      res.jsonp(count);
    }
  });
 }
  
+exports.query = function(req, res){
+
+ var responseObj = {};
+
+  if ( req.query.q2 ) {
+    req.query.q2 = eval('('+req.query.q2+')');
+    req.query.q = {};
+    if ( req.query.q2.firstname ) {
+      req.query.q.firstname = {};
+      req.query.q.firstname.$regex = req.query.q2.firstname.regex;
+      req.query.q.firstname.$options = req.query.q2.firstname.options;
+    }
+    if ( req.query.q2.lastname ) {
+      req.query.q.lastname = {};
+      req.query.q.lastname.$regex = req.query.q2.lastname.regex;
+      req.query.q.lastname.$options = req.query.q2.lastname.options;
+    }
+  }
+
+  console.log(req.query);
+
+ var runMainQuery = function() {
+
+   Person.find(req.query.q).skip((req.query.page-1)*req.query.page_limit).limit(req.query.page_limit).populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
+     if (err) {
+        res.render('error', {status: 500});
+     } else {      
+          responseObj.data = customers;
+          res.jsonp(responseObj);
+     }
+   });
+ }
+
+ if ( req.query.page == 1 ) {
+   Person.find(req.query.q).count().exec(function(err, count) {
+     if (err) {
+        res.render('error', {status: 500});
+     } else {
+        responseObj.count = count;
+        runMainQuery();
+     }
+   });
+ } else {
+    runMainQuery();
+ }  
+}
+
 exports.update = function(req, res){
   var person = req.person
   person = _.extend(person, req.body)

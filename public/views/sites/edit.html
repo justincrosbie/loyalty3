@@ -1,11 +1,11 @@
-<div ng-controller="SitesController"> 
+<div class="mypanel" ng-controller="SitesController"> 
   <ul>
     <div class="page-header">
       <h1>Modify Site: {{ site.name }}</h1>
     </div>
   </ul>
   <ul>
-    <form class="form-horizontal" ng-submit="update()" ng-init="findOne();populateCustomers()"> 
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne();populateCustomers()"> 
       <div class="form-group"> 
         <label class="control-label" for="name">Name</label> 
         <div class="controls"> 

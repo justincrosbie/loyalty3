@@ -1,11 +1,11 @@
-<div ng-controller="BookingsController"> 
+<div class="mypanel" ng-controller="BookingsController"> 
   <ul>
     <div class="page-header">
       <h1>Modify Booking</h1>
     </div>
   </ul>
   <ul>
-    <form class="form-horizontal" ng-submit="update()" ng-init="findOne();populateLOVs()"> 
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne();populateLOVs()"> 
       <div class="form-group"> 
         <tabset>
           <tab heading="Details" select="detailsSelected(booking)">

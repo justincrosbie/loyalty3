@@ -88,6 +88,7 @@ module.exports = function (app, passport, auth) {
   // person routes
   var persons = require('../app/controllers/persons')  
   app.get('/persons', persons.query)
+  app.get('/persons/count', persons.queryCount)
   app.post('/persons', auth.requiresLogin, persons.create)
   app.get('/persons/:personId', persons.show)
   app.put('/persons/:personId', auth.requiresLogin, persons.update)
