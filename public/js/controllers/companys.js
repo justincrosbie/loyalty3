@@ -68,7 +68,7 @@ window.angular.module('ngff.controllers.companys', [])
  
       $scope.find = function (query) {
         Companys.query(query, function (companys) {
-          $scope.companys = companys;
+          $scope.companys = companys.data;
         });
       };
  

@@ -7,6 +7,7 @@ window.angular.module('ngff.services.companys', [])
           companyId:'@_id'
         }, 
         {
+          query:  {method:'GET', isArray:false},
           update: {method: 'PUT'}
         }
       )
