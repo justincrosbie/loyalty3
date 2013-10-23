@@ -68,9 +68,21 @@ exports.query = function(req, res){
 
   console.log(req.query);
 
+  var sort_field = req.query.sort_field;
+  var sort_order = req.query.sort_order;
+
+  //var sort_params = (sort_field == 'firstname' ? {firstname: sort_order} : (sort_field == 'dob' ? {dob: sort_order} : {}));
+  var sort_params = {};
+  sort_params[sort_field] = sort_order;
+
  var runMainQuery = function() {
 
-   Person.find(req.query.q).skip((req.query.page-1)*req.query.page_limit).limit(req.query.page_limit).populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site').exec(function(err, customers) {
+   Person.find(req.query.q)
+        .skip((req.query.page-1)*req.query.page_limit)
+        .limit(req.query.page_limit)
+        .sort(sort_params)
+        .populate('title').populate('company').populate('homecountry').populate('workcountry').populate('customer').populate('site')
+        .exec(function(err, customers) {
      if (err) {
         res.render('error', {status: 500});
      } else {      

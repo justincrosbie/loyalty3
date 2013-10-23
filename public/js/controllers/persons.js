@@ -101,6 +101,8 @@ window.angular.module('ngff.controllers.persons', [])
       $scope.currentPage = 1;
       $scope.totalItems = 100;
       $scope.maxSize = 5;
+      $scope.sortField = 'firstname';
+      $scope.sortOrder = 1;
       
       $scope.findPaged = function () {
         var term = $scope.query || '';
@@ -117,6 +119,8 @@ window.angular.module('ngff.controllers.persons', [])
                 firstname : { regex: fn, options: 'i' }
               }
             , //search term
+            sort_field: $scope.sortField,
+            sort_order: $scope.sortOrder,
             page_limit: 10, // page size
             page: $scope.currentPage // page number
         };
@@ -152,5 +156,21 @@ window.angular.module('ngff.controllers.persons', [])
       $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
       };
+
+      $scope.sortClass = {'firstname': 'sortable sort-asc'};
+
+      $scope.changeSort = function (sortField) {
+        if ( $scope.sortField == sortField ) {
+          $scope.sortOrder *= -1;
+        } else {
+          $scope.sortOrder = 1;
+        }
+
+        $scope.sortClass = {};
+        $scope.sortClass[sortField] = 'sortable' + ($scope.sortOrder == -1 ? ' sort-desc' : ' sort-asc');
+
+        $scope.sortField = sortField;
+        $scope.findPaged();
+      }
 
     }]);

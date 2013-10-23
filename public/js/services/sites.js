@@ -7,6 +7,7 @@ window.angular.module('ngff.services.sites', [])
           siteId:'@_id'
         }, 
         {
+          query:  {method:'GET', isArray:false},
           update: {method: 'PUT'}
         }
       )

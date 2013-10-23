@@ -67,7 +67,7 @@ module.exports = function (app, passport, auth) {
 
   // site routes
   var sites = require('../app/controllers/sites')  
-  app.get('/sites', sites.all)
+  app.get('/sites', sites.query)
   app.post('/sites', auth.requiresLogin, sites.create)
   app.get('/sites/:siteId', sites.show)
   app.put('/sites/:siteId', auth.requiresLogin, sites.update)

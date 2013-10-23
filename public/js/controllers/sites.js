@@ -1,6 +1,6 @@
 window.angular.module('ngff.controllers.sites', [])
-  .controller('SitesController', ['$scope','$routeParams','$location', '$timeout','Global','Customers','Sites',
-    function($scope, $routeParams, $location, $timeout, Global, Customers, Sites) {
+  .controller('SitesController', ['$scope','$routeParams','$location', '$timeout', 'ngTableParams', 'Global','Customers','Sites',
+    function($scope, $routeParams, $location, $timeout, ngTableParams, Global, Customers, Sites) {
  
       $scope.global = Global;
  
@@ -34,7 +34,7 @@ window.angular.module('ngff.controllers.sites', [])
  
       $scope.find = function (query) {
         Sites.query(query, function (sites) {
-          $scope.sites = sites;
+          $scope.sites = sites.data;
         });
       };
  
@@ -56,4 +56,24 @@ window.angular.module('ngff.controllers.sites', [])
         }
       };
 
-    }]);
+    $scope.tableParams = new ngTableParams({
+        page: 1,            // show first page
+        total: 0,           // length of data
+        count: 10,          // count per page
+        sorting: {
+            name: 'asc'     // initial sorting
+        }
+    });
+ 
+    $scope.$watch('tableParams', function(params) {
+        var query = {};
+
+        Sites.query(query, function (sites) {
+          $scope.sites = sites.data;
+ 
+          // update table params
+          $scope.tableParams.total = sites.count;
+        });
+    }, true);
+
+}]);

@@ -37,6 +37,58 @@ exports.all = function(req, res){
  });
 }
  
+exports.queryCount = function(req, res){
+ Person.find(req.query.q).count().exec(function(err, count) {
+   if (err) {
+      res.render('error', {status: 500});
+   } else {    
+      res.jsonp(count);
+   }
+ });
+}
+ 
+exports.query = function(req, res){
+
+ var responseObj = {};
+
+  if ( req.query.q2 ) {
+    req.query.q2 = eval('('+req.query.q2+')');
+    req.query.q = {};
+    if ( req.query.q2.name ) {
+      req.query.q.name = {};
+      req.query.q.name.$regex = req.query.q2.name.regex;
+      req.query.q.name.$options = req.query.q2.name.options;
+    }
+  }
+
+  console.log(req.query);
+
+ var runMainQuery = function() {
+
+   Site.find(req.query.q).skip((req.query.page-1)*req.query.page_limit).limit(req.query.page_limit).populate('customer').exec(function(err, customers) {
+     if (err) {
+        res.render('error', {status: 500});
+     } else {      
+          responseObj.data = customers;
+          res.jsonp(responseObj);
+     }
+   });
+ }
+
+ if ( req.query.page == 1 ) {
+   Site.find(req.query.q).count().exec(function(err, count) {
+     if (err) {
+        res.render('error', {status: 500});
+     } else {
+        responseObj.count = count;
+        runMainQuery();
+     }
+   });
+ } else {
+    runMainQuery();
+ }  
+}
+
 exports.update = function(req, res){
   var site = req.site
   site = _.extend(site, req.body)
