@@ -108,16 +108,24 @@ window.angular.module('ngff.controllers.persons', [])
         var term = $scope.query || '';
         var fn = term.split(' ')[0] + '.*';
         var ln = term.split(' ')[1] + '.*';
-
-        var query = {
-            q2: term.split(' ').length > 1 ? 
+        var q2val = term.split(' ').length > 1 ? 
               { 
                 firstname : { regex: fn, options: 'i' },
                 lastname : { regex: ln, options: 'i' }
               } :
               { 
                 firstname : { regex: fn, options: 'i' }
-              }
+              };
+
+        if ( $scope.customerSearch ) {
+          q2val.customer = $scope.customerSearch._id;
+        }
+        if ( $scope.siteSearch ) {
+          q2val.site = $scope.siteSearch._id;
+        }
+
+        var query = {
+            q2: q2val
             , //search term
             sort_field: $scope.sortField,
             sort_order: $scope.sortOrder,

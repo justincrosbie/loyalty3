@@ -64,6 +64,12 @@ exports.query = function(req, res){
       req.query.q.lastname.$regex = req.query.q2.lastname.regex;
       req.query.q.lastname.$options = req.query.q2.lastname.options;
     }
+    if ( req.query.q2.customer ) {
+      req.query.q.customer = req.query.q2.customer;
+    }
+    if ( req.query.q2.site ) {
+      req.query.q.site = req.query.q2.site;
+    }
   }
 
   console.log(req.query);

@@ -32,6 +32,7 @@ window.angular.module('ngff.services.global', [])
       ,personSelect: {
         placeholder: "Search for a Person",
         minimumInputLength: 3,
+        allowClear: true,
         ajax: {
             url: "/persons",
             data: function (term, page) { // page is the one-based page number tracked by Select2
@@ -71,6 +72,7 @@ window.angular.module('ngff.services.global', [])
       ,companySelect: {
         placeholder: "Search for a Company",
         minimumInputLength: 3,
+        allowClear: true,
         ajax: {
             url: "/companys",
             data: function (term, page) { // page is the one-based page number tracked by Select2
@@ -105,6 +107,7 @@ window.angular.module('ngff.services.global', [])
       ,schemeSelect: {
         minimumResultsForSearch: -1,
         placeholder: "Select a Scheme",
+        allowClear: true,
         ajax: {
             url: "/loyaltySchemes",
             results: function (data, page) {
@@ -127,6 +130,7 @@ window.angular.module('ngff.services.global', [])
       ,titleSelect: {
         minimumResultsForSearch: -1,
         placeholder: "Select a Title",
+        allowClear: true,
         ajax: {
             url: "/titles",
             results: function (data, page) {
@@ -144,6 +148,52 @@ window.angular.module('ngff.services.global', [])
         id: function (e) { return e._id; },
         formatResult: function (title) { return title.name; }, // omitted for brevity, see the source of this page
         formatSelection: function (title) { return title.name; }, // omitted for brevity, see the source of this page
+        escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displayi        
+      }
+      ,customerSelect: {
+        minimumResultsForSearch: -1,
+        placeholder: "Select a Customer",
+        allowClear: true,
+        ajax: {
+            url: "/customers",
+            results: function (data, page) {
+                var more = (page * 10) < data.length;
+                return {results: data, more: more};
+            }
+        },
+        initSelection: function(element, callback) {
+            var id=$(element).val();
+            alert(id);
+            if (id!=="") {
+                $.ajax("/customers/"+id).done(function(data) { callback(data); });
+            }
+        },
+        id: function (e) { return e._id; },
+        formatResult: function (customer) { return customer.name; }, // omitted for brevity, see the source of this page
+        formatSelection: function (customer) { return customer.name; }, // omitted for brevity, see the source of this page
+        escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displayi        
+      }
+      ,siteSelect: {
+        minimumResultsForSearch: -1,
+        placeholder: "Select a Site",
+        allowClear: true,
+        ajax: {
+            url: "/sites",
+            results: function (responseObj, page) {
+                var more = (page * 10) < responseObj.data.length;
+                return {results: responseObj.data, more: more};
+            }
+        },
+        initSelection: function(element, callback) {
+            var id=$(element).val();
+            alert(id);
+            if (id!=="") {
+                $.ajax("/sites/"+id).done(function(data) { callback(data); });
+            }
+        },
+        id: function (e) { return e._id; },
+        formatResult: function (site) { return site.name; }, // omitted for brevity, see the source of this page
+        formatSelection: function (site) { return site.name; }, // omitted for brevity, see the source of this page
         escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displayi        
       }
 

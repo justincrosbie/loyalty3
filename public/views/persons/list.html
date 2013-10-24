@@ -5,13 +5,32 @@
     </div>
   </ul>
   <ul>
-    <form class="form-inline" role="form" ng-submit="findPaged()">
-      <div class="form-group">
-        <label class="sr-only" for="query">Search for Person</label>
-        <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter Firstname Lastname">
+      <div class="row">
+          <div class="col-md-6">
+            <form class="form-inline" role="form" ng-submit="findPaged()">
+              <div class="form-group">
+                <label class="sr-only" for="query">Search for Person</label>
+                <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter Firstname Lastname">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.companySelect" ng-model="companySearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.customerSelect" ng-model="customerSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.siteSelect" ng-model="siteSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
       </div>
-      <button type="submit" class="btn btn-primary">Search</button>
-    </form>
   </ul>
   <ul>
       <table class="table tablesorter table-striped table-bordered table-condensed">
