@@ -157,7 +157,7 @@ window.angular.module('ngff.controllers.persons', [])
         $scope.currentPage = pageNo;
       };
 
-      $scope.sortClass = {'firstname': 'sortable sort-asc'};
+      $scope.sortClass = {'firstname': 'sortable sort-asc sort-desc'};
 
       $scope.changeSort = function (sortField) {
         if ( $scope.sortField == sortField ) {
@@ -167,7 +167,7 @@ window.angular.module('ngff.controllers.persons', [])
         }
 
         $scope.sortClass = {};
-        $scope.sortClass[sortField] = 'sortable' + ($scope.sortOrder == -1 ? ' sort-desc' : ' sort-asc');
+        $scope.sortClass[sortField] = $scope.sortOrder == -1 ? 'headerSortDown' : 'headerSortUp';
 
         $scope.sortField = sortField;
         $scope.findPaged();

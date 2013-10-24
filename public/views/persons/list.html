@@ -14,17 +14,19 @@
     </form>
   </ul>
   <ul>
-      <table class="ng-table table table-striped table-bordered table-condensed">
-          <tr>
-            <th ng-class="sortClass.title" ng-click="changeSort('title')"><div>Title</div></th>
-            <th ng-class="sortClass.firstname" ng-click="changeSort('firstname')"><div>Name</div></th>
-            <th ng-class="sortClass.dob" ng-click="changeSort('dob')"><div>Date of Birth</div></th>
-            <th>Company</th>
-            <th>Customer</th>
-            <th>Site</th>
-            <th/>
-            <th/>
-          </tr>
+      <table class="table tablesorter table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th class="header" ng-class="sortClass.title" ng-click="changeSort('title')">Title</th>
+              <th class="header" ng-class="sortClass.firstname" ng-click="changeSort('firstname')">Name</th>
+              <th class="header" ng-class="sortClass.dob" ng-click="changeSort('dob')">Date of Birth</th>
+              <th>Company</th>
+              <th>Customer</th>
+              <th>Site</th>
+              <th/>
+              <th/>
+            </tr>
+          </thead>
           <tr ng-repeat="person in persons">
             <td>{{person.title.name}}</td>
             <td><a href="#!/persons/{{ person._id }}">{{person.firstname}} {{person.middlename}} {{person.lastname}}</a></td>
