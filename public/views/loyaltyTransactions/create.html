@@ -1,0 +1,70 @@
+<div class="mypanel" ng-controller="LoyaltyTransactionsController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Loyalty Transaction Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="create()"> 
+      <div class="form-group">
+        <tabset>
+
+
+        </tabset>
+
+	
+            <label class="control-label" for="loyaltyScheme">Scheme</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.loyaltySchemeSelect" ng-model="loyaltyTransaction.loyaltyScheme"/>
+            </div> 
+	
+            <label class="control-label" for="loyaltyStatement">Statement</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.loyaltyStatementSelect" ng-model="loyaltyTransaction.loyaltyStatement"/>
+            </div> 
+	
+            <label class="control-label" for="loyaltyMember">Member</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.loyaltyMemberSelect" ng-model="loyaltyTransaction.loyaltyMember"/>
+            </div> 
+	
+            <label class="control-label" for="loyaltyPoint">Point</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.loyaltyPointSelect" ng-model="loyaltyTransaction.loyaltyPoint"/>
+            </div> 
+	
+            <label class="control-label" for="booking">Booking</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.bookingSelect" ng-model="loyaltyTransaction.booking"/>
+            </div> 
+	
+            <label class="control-label" for="revenue">Revenue</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.revenueSelect" ng-model="loyaltyTransaction.revenue"/>
+            </div> 
+	
+            <label class="control-label" for="comments">Comments</label> 
+            <div class="controls">
+            	<input type="text" ng-model="loyaltyTransaction.comments" id="comments" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="points">Points</label> 
+            <div class="controls">
+            	<input type="text" ng-model="loyaltyTransaction.points" id="points" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.customerSelect" ng-model="loyaltyTransaction.customer"/>
+            </div> 
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

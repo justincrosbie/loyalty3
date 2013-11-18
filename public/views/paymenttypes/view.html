@@ -1,0 +1,21 @@
+<div class="mypanel" ng-controller="PaymenttypesController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Payment Type</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ paymenttype.name }}</p>
+      <p>Code: {{ paymenttype.code }}</p>
+      <p>Description: {{ paymenttype.description }}</p>
+      <p>Site: {{ paymenttype.site.name }}</p>
+      <p>Data Source: {{ paymenttype.datasource.name }}</p>
+      <p>Customer: {{ paymenttype.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/paymenttypes">View all Payment Types</a>
+  </ul>
+</div>

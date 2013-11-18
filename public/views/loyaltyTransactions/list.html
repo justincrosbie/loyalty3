@@ -1,0 +1,93 @@
+<div class="mypanel" ng-controller="LoyaltyTransactionsController" ng-init="findPaged()">
+  <ul>
+    <div class="page-header">
+      <h1>Loyalty Transactions</h1>
+    </div>
+  </ul>
+  <ul>
+      <div class="row">
+          <div class="col-md-6">
+            <form class="form-inline" role="form" ng-submit="findPaged()">
+              <div class="form-group">
+                <label class="sr-only" for="query">Search for Loyalty Transaction</label>
+                <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+          
+          
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.loyaltySchemeSelect" ng-model="loyaltySchemeSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.loyaltyStatementSelect" ng-model="loyaltyStatementSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.loyaltyMemberSelect" ng-model="loyaltyMemberSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.loyaltyPointSelect" ng-model="loyaltyPointSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.bookingSelect" ng-model="bookingSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.revenueSelect" ng-model="revenueSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+      </div>
+  </ul>
+  <ul>
+      <table class="table tablesorter table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th class="header" ng-class="sortClass.loyaltyScheme" ng-click="changeSort('loyaltyScheme')">Scheme</th>
+              <th class="header" ng-class="sortClass.loyaltyStatement" ng-click="changeSort('loyaltyStatement')">Statement</th>
+              <th class="header" ng-class="sortClass.loyaltyMember" ng-click="changeSort('loyaltyMember')">Member</th>
+              <th class="header" ng-class="sortClass.loyaltyPoint" ng-click="changeSort('loyaltyPoint')">Point</th>
+              <th class="header" ng-class="sortClass.booking" ng-click="changeSort('booking')">Booking</th>
+              <th class="header" ng-class="sortClass.revenue" ng-click="changeSort('revenue')">Revenue</th>
+              
+              
+              <th/>
+              <th/>
+            </tr>
+          </thead>
+          <tr ng-repeat="loyaltyTransaction in loyaltyTransactions">
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyScheme.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyStatement.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyMember.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.loyaltyPoint.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.booking.name}}</a></td>
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}">{{loyaltyTransaction.revenue.name}}</a></td>
+            
+              
+            <td><a href="#!/loyaltyTransactions/{{ loyaltyTransaction._id }}/edit">Edit</a></td>
+            <td><a href="" ng-click="remove(loyaltyTransaction)" >Remove</a></td>
+          </tr>
+      </table>
+  </ul>
+  <ul>
+    <pre>Total: {{totalItems}}</pre>
+  </ul>
+  <ul ng-show="totalItems > 10">
+    <pagination total-items="totalItems" page="currentPage" max-size="maxSize" class="pagination-small" 
+      boundary-links="true" rotate="false" num-pages="numPages" on-select-page="pageChanged(page)" >
+    </pagination>
+  </ul>
+  <ul>
+    <a href="#!/loyaltyTransactions/create" class="btn btn-primary">Create a new Loyalty Transaction</a>
+  </ul>
+</div>

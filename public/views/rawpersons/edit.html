@@ -1,0 +1,193 @@
+<div class="mypanel" ng-controller="RawpersonsController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Raw Person Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne()"> 
+      <div class="form-group">
+        <tabset>
+
+
+          <tab heading="Main Details" select="mainSelected(rawperson)">
+	
+            <label class="control-label" for="title">Title</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.titleSelect" ng-model="rawperson.title"/>
+            </div> 
+	
+            <label class="control-label" for="firstname">First Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.firstname" id="firstname" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="middlename">Middle Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.middlename" id="middlename" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="lastname">Last Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.lastname" id="lastname" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="gender">Gender</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="rawperson.gender" btn-radio="1">Male</button>
+    <button type="button" class="btn btn-default" ng-model="rawperson.gender" btn-radio="2">Female</button>
+</div>
+            </div> 
+	
+            <label class="control-label" for="contactable">Can Contact</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="rawperson.contactable" btn-radio="true">Contactable</button>
+    <button type="button" class="btn btn-default" ng-model="rawperson.contactable" btn-radio="false">Not Contactable</button>
+</div>
+
+            </div> 
+	
+            <label class="control-label" for="dob">Date of Birth</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.dob" id="dob" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+          </tab>
+
+          <tab heading="Home Contact Details" select="homecontactSelected(rawperson)">
+	
+            <label class="control-label" for="email">Email</label> 
+            <div class="controls">
+            	<input type="email" ng-model="rawperson.email" id="email" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="homephone">Home Phone</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.homephone" id="homephone" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="homeaddress1">Home Address1</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.homeaddress1" id="homeaddress1" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="homeaddress2">Home Address2</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.homeaddress2" id="homeaddress2" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="homeaddress3">Home Address3</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.homeaddress3" id="homeaddress3" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="homesuburb">Home Suburb</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.homesuburb" id="homesuburb" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="homecity">Home City</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.homecity" id="homecity" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="homepostcode">Home Post Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.homepostcode" id="homepostcode" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="homecountry">Home Country</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.countrySelect" ng-model="rawperson.homecountry"/>
+            </div> 
+	
+          </tab>
+
+          <tab heading="Work Details" select="workcontactSelected(rawperson)">
+	
+            <label class="control-label" for="company">Company</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.companySelect" ng-model="rawperson.company"/>
+            </div> 
+	
+            <label class="control-label" for="workphone">Work Phone</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.workphone" id="workphone" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="workaddress1">Work Address1</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.workaddress1" id="workaddress1" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="workaddress2">Work Address2</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.workaddress2" id="workaddress2" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="workaddress3">Work Address3</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.workaddress3" id="workaddress3" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="worksuburb">Work Suburb</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.worksuburb" id="worksuburb" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="workcity">Work City</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.workcity" id="workcity" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="workpostcode">Work Post Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="rawperson.workpostcode" id="workpostcode" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="workcountry">Work Country</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.countrySelect" ng-model="rawperson.workcountry"/>
+            </div> 
+	
+          </tab>
+
+          <tab heading="Other Details" select="otherSelected(rawperson)">
+	
+            <label class="control-label" for="rawcompany">Company</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.rawcompanySelect" ng-model="rawperson.rawcompany"/>
+            </div> 
+	
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.customerSelect" ng-model="rawperson.customer"/>
+            </div> 
+	
+            <label class="control-label" for="datasource">Data Source</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.datasourceSelect" ng-model="rawperson.datasource"/>
+            </div> 
+	
+            <label class="control-label" for="site">Site</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.siteSelect" ng-model="rawperson.site"/>
+            </div> 
+	
+          </tab>
+
+        </tabset>
+
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

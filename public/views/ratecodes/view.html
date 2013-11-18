@@ -1,0 +1,21 @@
+<div class="mypanel" ng-controller="RatecodesController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Rate Code</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ ratecode.name }}</p>
+      <p>Code: {{ ratecode.code }}</p>
+      <p>Description: {{ ratecode.description }}</p>
+      <p>Site: {{ ratecode.site.name }}</p>
+      <p>Data Source: {{ ratecode.datasource.name }}</p>
+      <p>Customer: {{ ratecode.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/ratecodes">View all Rate Codes</a>
+  </ul>
+</div>

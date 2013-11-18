@@ -1,0 +1,118 @@
+<div class="mypanel" ng-controller="BookingsController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Booking Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="create()"> 
+      <div class="form-group">
+        <tabset>
+
+
+          <tab heading="Main Details" select="mainSelected(booking)">
+	
+            <label class="control-label" for="code">Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="booking.code" id="code" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="status">Status</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.bookingstatusSelect" ng-model="booking.status"/>
+            </div> 
+	
+            <label class="control-label" for="type">Type</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.bookingtypeSelect" ng-model="booking.type"/>
+            </div> 
+	
+            <label class="control-label" for="datebooked">Date Booked</label> 
+            <div class="controls">
+            	<input type="text" ng-model="booking.datebooked" id="datebooked" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="start">Start Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="booking.start" id="start" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="end">End Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="booking.end" id="end" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="room">Room</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.roomSelect" ng-model="booking.room"/>
+            </div> 
+	
+            <label class="control-label" for="comments">Comments</label> 
+            <div class="controls">
+            	<input type="text" ng-model="booking.comments" id="comments" class="form-control"/>
+            </div> 
+	
+          </tab>
+
+          <tab heading="Codes" select="codesSelected(booking)">
+	
+            <label class="control-label" for="ratecode">Rate Code</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.ratecodeSelect" ng-model="booking.ratecode"/>
+            </div> 
+	
+            <label class="control-label" for="marketcode">Market Code</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.marketcodeSelect" ng-model="booking.marketcode"/>
+            </div> 
+	
+            <label class="control-label" for="channel">Channel</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.channelSelect" ng-model="booking.channel"/>
+            </div> 
+	
+            <label class="control-label" for="sob">Source of Business</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.sobSelect" ng-model="booking.sob"/>
+            </div> 
+	
+            <label class="control-label" for="person">Person</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.rawpersonSelect" ng-model="booking.person"/>
+            </div> 
+	
+            <label class="control-label" for="company">Company</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.rawcompanySelect" ng-model="booking.company"/>
+            </div> 
+	
+            <label class="control-label" for="site">Site</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.siteSelect" ng-model="booking.site"/>
+            </div> 
+	
+            <label class="control-label" for="datasource">Datasource</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.datasourceSelect" ng-model="booking.datasource"/>
+            </div> 
+	
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.customerSelect" ng-model="booking.customer"/>
+            </div> 
+	
+          </tab>
+
+        </tabset>
+
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

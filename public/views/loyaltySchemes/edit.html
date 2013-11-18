@@ -1,0 +1,49 @@
+<div class="mypanel" ng-controller="LoyaltySchemesController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Loyalty Scheme Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne()"> 
+      <div class="form-group">
+        <tabset>
+
+
+        </tabset>
+
+	
+            <label class="control-label" for="name">Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="loyaltyScheme.name" id="name" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="code">Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="loyaltyScheme.code" id="code" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.customerSelect" ng-model="loyaltyScheme.customer"/>
+            </div> 
+	
+            <label class="control-label" for="duration">Duration</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="loyaltyScheme.duration" btn-radio="1">1 Month</button>
+    <button type="button" class="btn btn-default" ng-model="loyaltyScheme.duration" btn-radio="2">1 Year</button>
+    <button type="button" class="btn btn-default" ng-model="loyaltyScheme.duration" btn-radio="3">2 Years</button>
+</div>
+            </div> 
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

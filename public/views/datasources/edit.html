@@ -1,0 +1,55 @@
+<div class="mypanel" ng-controller="DatasourcesController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Data Source Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne()"> 
+      <div class="form-group">
+        <tabset>
+
+
+        </tabset>
+
+	
+            <label class="control-label" for="name">Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="datasource.name" id="name" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="datasourcetype">Type</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.datasourcetypeSelect" ng-model="datasource.datasourcetype"/>
+            </div> 
+	
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.customerSelect" ng-model="datasource.customer"/>
+            </div> 
+	
+            <label class="control-label" for="connectstr">Connect String</label> 
+            <div class="controls">
+            	<input type="text" ng-model="datasource.connectstr" id="connectstr" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="username">Username</label> 
+            <div class="controls">
+            	<input type="text" ng-model="datasource.username" id="username" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="password">Password</label> 
+            <div class="controls">
+            	<input type="text" ng-model="datasource.password" id="password" class="form-control"/>
+            </div> 
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

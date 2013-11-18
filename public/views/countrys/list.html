@@ -1,0 +1,55 @@
+<div class="mypanel" ng-controller="CountrysController" ng-init="findPaged()">
+  <ul>
+    <div class="page-header">
+      <h1>Countrys</h1>
+    </div>
+  </ul>
+  <ul>
+      <div class="row">
+          <div class="col-md-6">
+            <form class="form-inline" role="form" ng-submit="findPaged()">
+              <div class="form-group">
+                <label class="sr-only" for="query">Search for Country</label>
+                <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter name iso">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+          
+          
+      </div>
+  </ul>
+  <ul>
+      <table class="table tablesorter table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th class="header" ng-class="sortClass.name" ng-click="changeSort('name')">Name</th>
+              <th class="header" ng-class="sortClass.iso" ng-click="changeSort('iso')">ISO Code</th>
+              
+              
+              <th/>
+              <th/>
+            </tr>
+          </thead>
+          <tr ng-repeat="country in countrys">
+            <td><a href="#!/countrys/{{ country._id }}">{{country.name}}</a></td>
+            <td><a href="#!/countrys/{{ country._id }}">{{country.iso}}</a></td>
+            
+              
+            <td><a href="#!/countrys/{{ country._id }}/edit">Edit</a></td>
+            <td><a href="" ng-click="remove(country)" >Remove</a></td>
+          </tr>
+      </table>
+  </ul>
+  <ul>
+    <pre>Total: {{totalItems}}</pre>
+  </ul>
+  <ul ng-show="totalItems > 10">
+    <pagination total-items="totalItems" page="currentPage" max-size="maxSize" class="pagination-small" 
+      boundary-links="true" rotate="false" num-pages="numPages" on-select-page="pageChanged(page)" >
+    </pagination>
+  </ul>
+  <ul>
+    <a href="#!/countrys/create" class="btn btn-primary">Create a new Country</a>
+  </ul>
+</div>

@@ -1,0 +1,23 @@
+<div class="mypanel" ng-controller="LoyaltyStatementsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Loyalty Statement</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Scheme: {{ loyaltyStatement.loyaltyScheme.name }}</p>
+      <p>Name: {{ loyaltyStatement.name }}</p>
+      <p>Description: {{ loyaltyStatement.description }}</p>
+      <p>Code: {{ loyaltyStatement.code }}</p>
+      <p>Is Active: {{ loyaltyStatement.isactive }}</p>
+      <p>Start Date: {{ loyaltyStatement.start|date }}</p>
+      <p>End Date: {{ loyaltyStatement.end|date }}</p>
+      <p>Customer: {{ loyaltyStatement.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/loyaltyStatements">View all Loyalty Statements</a>
+  </ul>
+</div>

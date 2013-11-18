@@ -1,0 +1,22 @@
+<div class="mypanel" ng-controller="RevenuecodesController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Revenue Code</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ revenuecode.name }}</p>
+      <p>Code: {{ revenuecode.code }}</p>
+      <p>Description: {{ revenuecode.description }}</p>
+      <p>Type: {{ revenuecode.revenuetype.name }}</p>
+      <p>Site: {{ revenuecode.site.name }}</p>
+      <p>Data Source: {{ revenuecode.datasource.name }}</p>
+      <p>Customer: {{ revenuecode.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/revenuecodes">View all Revenue Codes</a>
+  </ul>
+</div>

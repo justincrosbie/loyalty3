@@ -1,0 +1,93 @@
+<div class="mypanel" ng-controller="RevenuesController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Revenue Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne()"> 
+      <div class="form-group">
+        <tabset>
+
+
+          <tab heading="Main Details" select="mainSelected(revenue)">
+	
+            <label class="control-label" for="code">Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="revenue.code" id="code" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="datespent">Date Spent</label> 
+            <div class="controls">
+            	<input type="text" ng-model="revenue.datespent" id="datespent" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="comments">Comments</label> 
+            <div class="controls">
+            	<input type="text" ng-model="revenue.comments" id="comments" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="amount">Amount</label> 
+            <div class="controls">
+            	<input type="text" ng-model="revenue.amount" id="amount" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="quantity">Quantity</label> 
+            <div class="controls">
+            	<input type="text" ng-model="revenue.quantity" id="quantity" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="currency">Currency</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.currencySelect" ng-model="revenue.currency"/>
+            </div> 
+	
+          </tab>
+
+          <tab heading="Codes" select="codesSelected(revenue)">
+	
+            <label class="control-label" for="booking">Booking</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.bookingSelect" ng-model="revenue.booking"/>
+            </div> 
+	
+            <label class="control-label" for="paymenttype">Payment Type</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.paymenttypeSelect" ng-model="revenue.paymenttype"/>
+            </div> 
+	
+            <label class="control-label" for="revenuecode">Revenue Code</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.revenuecodeSelect" ng-model="revenue.revenuecode"/>
+            </div> 
+	
+            <label class="control-label" for="site">Site</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.siteSelect" ng-model="revenue.site"/>
+            </div> 
+	
+            <label class="control-label" for="datasource">Datasource</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.datasourceSelect" ng-model="revenue.datasource"/>
+            </div> 
+	
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.customerSelect" ng-model="revenue.customer"/>
+            </div> 
+	
+          </tab>
+
+        </tabset>
+
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

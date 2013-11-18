@@ -1,0 +1,23 @@
+	.my-slide-container {
+	  position:relative;
+	}
+	.my-slide-animation.ng-enter {
+	  -webkit-transition:0.3s linear all;
+	  -moz-transition:0.3s linear all;
+	  -o-transition:0.3s linear all;
+	  transition:0.3s linear all;
+	}
+
+	.my-slide-animation.ng-enter {
+	  opacity:0;
+	}
+	.my-slide-animation.ng-enter.ng-enter-active {
+	  opacity:1;
+	}
+
+	.my-slide-animation.ng-leave {
+	  opacity:1;
+	}
+	.my-slide-animation.ng-leave.ng-leave-active {
+	  opacity:0;
+	}

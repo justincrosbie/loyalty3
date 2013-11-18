@@ -1,0 +1,18 @@
+extends auth
+
+block auth
+  form(action="/users/session", method="post")
+    p.error= message
+    .form-group
+      label(for='email').control-label Email
+      input#email(type='text', name="email", placeholder='Email').form-control
+
+    .form-group
+      label(for='password').control-label Password
+      input#password(type='password', name="password", placeholder='Password').form-control
+
+    .form-group
+      button.btn.btn-primary(type='submit') Sign in
+      &nbsp;
+      | or&nbsp;
+      a.show-signup(href="/signup") Sign up

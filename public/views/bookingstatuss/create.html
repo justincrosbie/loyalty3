@@ -1,0 +1,45 @@
+<div class="mypanel" ng-controller="BookingstatussController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Booking Status Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="create()"> 
+      <div class="form-group">
+        <tabset>
+
+
+        </tabset>
+
+	
+            <label class="control-label" for="name">Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="bookingstatus.name" id="name" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="code">Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="bookingstatus.code" id="code" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="description">Description</label> 
+            <div class="controls">
+            	<input type="text" ng-model="bookingstatus.description" id="description" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.customerSelect" ng-model="bookingstatus.customer"/>
+            </div> 
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

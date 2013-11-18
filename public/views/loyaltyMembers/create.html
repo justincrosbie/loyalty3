@@ -1,0 +1,69 @@
+<div class="mypanel" ng-controller="LoyaltyMembersController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Loyalty Member Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="create()"> 
+      <div class="form-group">
+        <tabset>
+
+
+        </tabset>
+
+	
+            <label class="control-label" for="loyaltyScheme">Scheme</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.loyaltySchemeSelect" ng-model="loyaltyMember.loyaltyScheme"/>
+            </div> 
+	
+            <label class="control-label" for="code">Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="loyaltyMember.code" id="code" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="person">Person</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.personSelect" ng-model="loyaltyMember.person"/>
+            </div> 
+	
+            <label class="control-label" for="isactive">Is Active</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="loyaltyMember.isactive" btn-radio="true">Active</button>
+    <button type="button" class="btn btn-default" ng-model="loyaltyMember.isactive" btn-radio="false">Inactive</button>
+</div>
+
+            </div> 
+	
+            <label class="control-label" for="start">Start Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="loyaltyMember.start" id="start" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="end">End Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="loyaltyMember.end" id="end" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="password">Password</label> 
+            <div class="controls">
+            	<input type="password" ng-model="loyaltyMember.password" id="password" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="customer">Customer</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.customerSelect" ng-model="loyaltyMember.customer"/>
+            </div> 
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

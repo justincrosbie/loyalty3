@@ -1,0 +1,21 @@
+<div class="mypanel" ng-controller="SobsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Source of Business</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ sob.name }}</p>
+      <p>Code: {{ sob.code }}</p>
+      <p>Description: {{ sob.description }}</p>
+      <p>Site: {{ sob.site.name }}</p>
+      <p>Data Source: {{ sob.datasource.name }}</p>
+      <p>Customer: {{ sob.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/sobs">View all Source of Businesss</a>
+  </ul>
+</div>

@@ -1,0 +1,30 @@
+<div class="mypanel" ng-controller="TitlesController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Title Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne()"> 
+      <div class="form-group">
+        <tabset>
+
+
+        </tabset>
+
+	
+            <label class="control-label" for="name">Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="title.name" id="name" class="form-control"/>
+            </div> 
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

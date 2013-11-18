@@ -1,0 +1,44 @@
+<div class="mypanel" ng-controller="RawpersonsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Raw Person</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Title: {{ rawperson.title.name }}</p>
+      <p>First Name: {{ rawperson.firstname }}</p>
+      <p>Middle Name: {{ rawperson.middlename }}</p>
+      <p>Last Name: {{ rawperson.lastname }}</p>
+      <p>Gender: {{ rawperson.gender }}</p>
+      <p>Can Contact: {{ rawperson.contactable }}</p>
+      <p>Date of Birth: {{ rawperson.dob|date }}</p>
+      <p>Email: {{ rawperson.email }}</p>
+      <p>Home Phone: {{ rawperson.homephone }}</p>
+      <p>Home Address1: {{ rawperson.homeaddress1 }}</p>
+      <p>Home Address2: {{ rawperson.homeaddress2 }}</p>
+      <p>Home Address3: {{ rawperson.homeaddress3 }}</p>
+      <p>Home Suburb: {{ rawperson.homesuburb }}</p>
+      <p>Home City: {{ rawperson.homecity }}</p>
+      <p>Home Post Code: {{ rawperson.homepostcode }}</p>
+      <p>Home Country: {{ rawperson.homecountry.name }}</p>
+      <p>Company: {{ rawperson.company.name }}</p>
+      <p>Work Phone: {{ rawperson.workphone }}</p>
+      <p>Work Address1: {{ rawperson.workaddress1 }}</p>
+      <p>Work Address2: {{ rawperson.workaddress2 }}</p>
+      <p>Work Address3: {{ rawperson.workaddress3 }}</p>
+      <p>Work Suburb: {{ rawperson.worksuburb }}</p>
+      <p>Work City: {{ rawperson.workcity }}</p>
+      <p>Work Post Code: {{ rawperson.workpostcode }}</p>
+      <p>Work Country: {{ rawperson.workcountry.name }}</p>
+      <p>Company: {{ rawperson.rawcompany.name }}</p>
+      <p>Customer: {{ rawperson.customer.name }}</p>
+      <p>Data Source: {{ rawperson.datasource.name }}</p>
+      <p>Site: {{ rawperson.site.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/rawpersons">View all Raw Persons</a>
+  </ul>
+</div>

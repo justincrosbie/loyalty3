@@ -1,0 +1,75 @@
+<div class="mypanel" ng-controller="BookingsController" ng-init="findPaged()">
+  <ul>
+    <div class="page-header">
+      <h1>Bookings</h1>
+    </div>
+  </ul>
+  <ul>
+      <div class="row">
+          <div class="col-md-6">
+            <form class="form-inline" role="form" ng-submit="findPaged()">
+              <div class="form-group">
+                <label class="sr-only" for="query">Search for Booking</label>
+                <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter code">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+          
+          
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.bookingstatusSelect" ng-model="statusSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.bookingtypeSelect" ng-model="typeSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.siteSelect" ng-model="siteSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.customerSelect" ng-model="customerSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+      </div>
+  </ul>
+  <ul>
+      <table class="table tablesorter table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th class="header" ng-class="sortClass.code" ng-click="changeSort('code')">Code</th>
+              <th class="header" ng-class="sortClass.datebooked" ng-click="changeSort('datebooked')">Date Booked</th>
+              
+              
+              <th/>
+              <th/>
+            </tr>
+          </thead>
+          <tr ng-repeat="booking in bookings">
+            <td><a href="#!/bookings/{{ booking._id }}">{{booking.code}}</a></td>
+            <td><a href="#!/bookings/{{ booking._id }}">{{booking.datebooked|date}}</a></td>
+            
+              
+            <td><a href="#!/bookings/{{ booking._id }}/edit">Edit</a></td>
+            <td><a href="" ng-click="remove(booking)" >Remove</a></td>
+          </tr>
+      </table>
+  </ul>
+  <ul>
+    <pre>Total: {{totalItems}}</pre>
+  </ul>
+  <ul ng-show="totalItems > 10">
+    <pagination total-items="totalItems" page="currentPage" max-size="maxSize" class="pagination-small" 
+      boundary-links="true" rotate="false" num-pages="numPages" on-select-page="pageChanged(page)" >
+    </pagination>
+  </ul>
+  <ul>
+    <a href="#!/bookings/create" class="btn btn-primary">Create a new Booking</a>
+  </ul>
+</div>

@@ -1,0 +1,19 @@
+<div class="mypanel" ng-controller="CurrencysController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Currency</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ currency.name }}</p>
+      <p>ISO Code: {{ currency.iso }}</p>
+      <p>Symbol: {{ currency.symbol }}</p>
+      <p>Exchange Rate: {{ currency.exchangerate }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/currencys">View all Currencys</a>
+  </ul>
+</div>

@@ -1,0 +1,24 @@
+<div class="mypanel" ng-controller="LoyaltyTransactionsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Loyalty Transaction</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Scheme: {{ loyaltyTransaction.loyaltyScheme.name }}</p>
+      <p>Statement: {{ loyaltyTransaction.loyaltyStatement.name }}</p>
+      <p>Member: {{ loyaltyTransaction.loyaltyMember.name }}</p>
+      <p>Point: {{ loyaltyTransaction.loyaltyPoint.name }}</p>
+      <p>Booking: {{ loyaltyTransaction.booking.name }}</p>
+      <p>Revenue: {{ loyaltyTransaction.revenue.name }}</p>
+      <p>Comments: {{ loyaltyTransaction.comments }}</p>
+      <p>Points: {{ loyaltyTransaction.points }}</p>
+      <p>Customer: {{ loyaltyTransaction.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/loyaltyTransactions">View all Loyalty Transactions</a>
+  </ul>
+</div>

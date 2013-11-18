@@ -1,0 +1,21 @@
+<div class="mypanel" ng-controller="DatasourcesController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Data Source</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ datasource.name }}</p>
+      <p>Type: {{ datasource.datasourcetype.name }}</p>
+      <p>Customer: {{ datasource.customer.name }}</p>
+      <p>Connect String: {{ datasource.connectstr }}</p>
+      <p>Username: {{ datasource.username }}</p>
+      <p>Password: {{ datasource.password }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/datasources">View all Data Sources</a>
+  </ul>
+</div>

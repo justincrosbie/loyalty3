@@ -1,0 +1,18 @@
+<div class="mypanel" ng-controller="CountrysController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Country</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ country.name }}</p>
+      <p>ISO Code: {{ country.iso }}</p>
+      <p>IDC: {{ country.idc }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/countrys">View all Countrys</a>
+  </ul>
+</div>

@@ -1,0 +1,17 @@
+<div class="mypanel" ng-controller="SubscriptionsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Subscription</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ subscription.name }}</p>
+      <p>Rate: {{ subscription.rate }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/subscriptions">View all Subscriptions</a>
+  </ul>
+</div>

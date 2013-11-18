@@ -1,0 +1,84 @@
+<div class="mypanel" ng-controller="RawpersonsController" ng-init="findPaged()">
+  <ul>
+    <div class="page-header">
+      <h1>Raw Persons</h1>
+    </div>
+  </ul>
+  <ul>
+      <div class="row">
+          <div class="col-md-6">
+            <form class="form-inline" role="form" ng-submit="findPaged()">
+              <div class="form-group">
+                <label class="sr-only" for="query">Search for Raw Person</label>
+                <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter firstname middlename lastname">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+          
+          
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.companySelect" ng-model="companySearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.rawcompanySelect" ng-model="rawcompanySearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.customerSelect" ng-model="customerSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.datasourceSelect" ng-model="datasourceSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+          <div class="col-md-2">
+              <div class="controls"> 
+                <input type="hidden" ui-select2="global.siteSelect" ng-model="siteSearch" ng-click="findPaged()"/>
+              </div> 
+          </div>
+      </div>
+  </ul>
+  <ul>
+      <table class="table tablesorter table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th class="header" ng-class="sortClass.title" ng-click="changeSort('title')">Title</th>
+              <th class="header" ng-class="sortClass.firstname" ng-click="changeSort('firstname')">First Name</th>
+              <th class="header" ng-class="sortClass.middlename" ng-click="changeSort('middlename')">Middle Name</th>
+              <th class="header" ng-class="sortClass.lastname" ng-click="changeSort('lastname')">Last Name</th>
+              
+              
+              <th/>
+              <th/>
+            </tr>
+          </thead>
+          <tr ng-repeat="rawperson in rawpersons">
+            <td><a href="#!/rawpersons/{{ rawperson._id }}">{{rawperson.title.name}}</a></td>
+            <td><a href="#!/rawpersons/{{ rawperson._id }}">{{rawperson.firstname}}</a></td>
+            <td><a href="#!/rawpersons/{{ rawperson._id }}">{{rawperson.middlename}}</a></td>
+            <td><a href="#!/rawpersons/{{ rawperson._id }}">{{rawperson.lastname}}</a></td>
+            
+              
+            <td><a href="#!/rawpersons/{{ rawperson._id }}/edit">Edit</a></td>
+            <td><a href="" ng-click="remove(rawperson)" >Remove</a></td>
+          </tr>
+      </table>
+  </ul>
+  <ul>
+    <pre>Total: {{totalItems}}</pre>
+  </ul>
+  <ul ng-show="totalItems > 10">
+    <pagination total-items="totalItems" page="currentPage" max-size="maxSize" class="pagination-small" 
+      boundary-links="true" rotate="false" num-pages="numPages" on-select-page="pageChanged(page)" >
+    </pagination>
+  </ul>
+  <ul>
+    <a href="#!/rawpersons/create" class="btn btn-primary">Create a new Raw Person</a>
+  </ul>
+</div>

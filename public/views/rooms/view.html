@@ -1,0 +1,22 @@
+<div class="mypanel" ng-controller="RoomsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Room</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ room.name }}</p>
+      <p>Code: {{ room.code }}</p>
+      <p>Description: {{ room.description }}</p>
+      <p>Type: {{ room.roomtype.name }}</p>
+      <p>Site: {{ room.site.name }}</p>
+      <p>Data Source: {{ room.datasource.name }}</p>
+      <p>Customer: {{ room.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/rooms">View all Rooms</a>
+  </ul>
+</div>

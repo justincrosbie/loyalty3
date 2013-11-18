@@ -1,0 +1,27 @@
+<div class="mypanel" ng-controller="CompanysController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Company</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ company.name }}</p>
+      <p>Email: {{ company.email }}</p>
+      <p>Home Phone: {{ company.phone }}</p>
+      <p>Home Address1: {{ company.address1 }}</p>
+      <p>Home Address2: {{ company.address2 }}</p>
+      <p>Home Address3: {{ company.address3 }}</p>
+      <p>Home Suburb: {{ company.suburb }}</p>
+      <p>Home City: {{ company.city }}</p>
+      <p>Home Post Code: {{ company.postcode }}</p>
+      <p>Home Country: {{ company.country.name }}</p>
+      <p>Customer: {{ company.customer.name }}</p>
+      <p>Site: {{ company.site.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/companys">View all Companys</a>
+  </ul>
+</div>

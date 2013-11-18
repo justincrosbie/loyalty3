@@ -1,0 +1,19 @@
+<div class="mypanel" ng-controller="BookingstatussController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Booking Status</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ bookingstatus.name }}</p>
+      <p>Code: {{ bookingstatus.code }}</p>
+      <p>Description: {{ bookingstatus.description }}</p>
+      <p>Customer: {{ bookingstatus.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/bookingstatuss">View all Booking Statuss</a>
+  </ul>
+</div>

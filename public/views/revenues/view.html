@@ -1,0 +1,27 @@
+<div class="mypanel" ng-controller="RevenuesController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Revenue</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Code: {{ revenue.code }}</p>
+      <p>Date Spent: {{ revenue.datespent|date }}</p>
+      <p>Comments: {{ revenue.comments }}</p>
+      <p>Amount: {{ revenue.amount }}</p>
+      <p>Quantity: {{ revenue.quantity }}</p>
+      <p>Currency: {{ revenue.currency.name }}</p>
+      <p>Booking: {{ revenue.booking.name }}</p>
+      <p>Payment Type: {{ revenue.paymenttype.name }}</p>
+      <p>Revenue Code: {{ revenue.revenuecode.name }}</p>
+      <p>Site: {{ revenue.site.name }}</p>
+      <p>Datasource: {{ revenue.datasource.name }}</p>
+      <p>Customer: {{ revenue.customer.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/revenues">View all Revenues</a>
+  </ul>
+</div>
