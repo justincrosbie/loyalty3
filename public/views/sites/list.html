@@ -1,15 +1,10 @@
-<<<<<<< HEAD
 <div class="mypanel" ng-controller="SitesController" ng-init="findPaged()">
-=======
-<div class="mypanel" ng-controller="SitesController" ng-init="find()">
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
   <ul>
     <div class="page-header">
       <h1>Sites</h1>
     </div>
   </ul>
   <ul>
-<<<<<<< HEAD
       <div class="row">
           <div class="col-md-6">
             <form class="form-inline" role="form" ng-submit="findPaged()">
@@ -46,19 +41,12 @@
             <td><a href="#!/sites/{{ site._id }}">{{site.customer.name}}</a></td>
             
               
-=======
-      <table ng-table="tableParams" show-filter="true" class="table table-striped table-bordered table-condensed">
-          <tr ng-repeat="site in sites">
-            <td data-title="'Name'" filter="{ 'name': 'text' }"  sortable="name"><a href="#!/sites/{{ site._id }}">{{site.name}}</a></td>
-            <td data-title="'Customer'" filter="{ 'customer': 'text' }"  sortable="customer.name">{{site.customer.name}}</td>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
             <td><a href="#!/sites/{{ site._id }}/edit">Edit</a></td>
             <td><a href="" ng-click="remove(site)" >Remove</a></td>
           </tr>
       </table>
   </ul>
   <ul>
-<<<<<<< HEAD
     <pre>Total: {{totalItems}}</pre>
   </ul>
   <ul ng-show="totalItems > 10">
@@ -68,8 +56,5 @@
   </ul>
   <ul>
     <a href="#!/sites/create" class="btn btn-primary">Create a new Site</a>
-=======
-    <a href="#!/sites/create" class="btn btn-primary">Create a new site</a>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
   </ul>
 </div>

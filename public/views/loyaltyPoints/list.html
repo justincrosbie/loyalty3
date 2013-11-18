@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="mypanel" ng-controller="LoyaltyPointsController" ng-init="findPaged()">
   <ul>
     <div class="page-header">
@@ -38,37 +37,18 @@
               <th/>
             </tr>
           </thead>
-=======
-<div class="mypanel" ng-controller="LoyaltyPointsController" ng-init="find()">
-  <ul>
-    <div class="page-header">
-      <h1>LoyaltyPoints</h1>
-    </div>
-  </ul>
-  <ul>
-      <table class="table table-striped table-bordered table-condensed">
-          <tr><th>Scheme</th><th>Name</th><th>Code</th><th>Start Date</th><th>End Date</th><th>Is Active</th><th>Points</th><th/><th/></tr>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
           <tr ng-repeat="loyaltyPoint in loyaltyPoints">
             <td><a href="#!/loyaltyPoints/{{ loyaltyPoint._id }}">{{loyaltyPoint.loyaltyScheme.name}}</a></td>
             <td><a href="#!/loyaltyPoints/{{ loyaltyPoint._id }}">{{loyaltyPoint.name}}</a></td>
             <td><a href="#!/loyaltyPoints/{{ loyaltyPoint._id }}">{{loyaltyPoint.code}}</a></td>
-<<<<<<< HEAD
             
               
-=======
-            <td>{{loyaltyPoint.start | date}}</td>
-            <td>{{loyaltyPoint.end | date}}</td>
-            <td>{{loyaltyPoint.active}}</td>
-            <td>{{loyaltyPoint.formula}}</td>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
             <td><a href="#!/loyaltyPoints/{{ loyaltyPoint._id }}/edit">Edit</a></td>
             <td><a href="" ng-click="remove(loyaltyPoint)" >Remove</a></td>
           </tr>
       </table>
   </ul>
   <ul>
-<<<<<<< HEAD
     <pre>Total: {{totalItems}}</pre>
   </ul>
   <ul ng-show="totalItems > 10">
@@ -78,8 +58,5 @@
   </ul>
   <ul>
     <a href="#!/loyaltyPoints/create" class="btn btn-primary">Create a new Loyalty Point</a>
-=======
-    <a href="#!/loyaltyPoints/create" class="btn btn-primary">Create a new LoyaltyPoint</a>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
   </ul>
 </div>

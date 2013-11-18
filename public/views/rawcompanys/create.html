@@ -1,7 +1,6 @@
 <div class="mypanel" ng-controller="RawcompanysController"> 
   <ul>
     <div class="page-header">
-<<<<<<< HEAD
       <h1>Raw Company Details</h1>
     </div>
   </ul>
@@ -86,86 +85,6 @@
         </tabset>
 
 	
-=======
-      <h1>Create New Rawcompany</h1>
-    </div>
-  </ul>
-  <ul>
-    <form class="form-vertical" ng-submit="create()" ng-init="populateLOVs()"> 
-      <div class="form-group"> 
-
-        
-        <tabset>
-          <tab heading="Details" select="detailsSelected(rawcompany)">
-            <label class="control-label" for="code">Code</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.code" id="code" class="form-control"> 
-            </div> 
-            <label class="control-label" for="name">Name</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.name" id="name" class="form-control"> 
-            </div> 
-            <label class="control-label" for="iata">IATA Number</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.iata" id="iata" class="form-control"> 
-            </div> 
-          </tab>
-          <tab heading="Contact" select="contactSelected(rawcompany)">
-            <label class="control-label" for="email">Email</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.email" id="email" class="form-control"> 
-            </div> 
-            <label class="control-label" for="phone">Phone</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.phone" id="phone" class="form-control"> 
-            </div> 
-            <label class="control-label" for="address1">Address Line1</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.address1" id="address1" class="form-control"> 
-            </div> 
-            <label class="control-label" for="address2">Address Line2</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.address2" id="address2" class="form-control"> 
-            </div> 
-            <label class="control-label" for="address3">Address Line3</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.address3" id="address3" class="form-control"> 
-            </div> 
-            <label class="control-label" for="suburb">District</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.suburb" id="suburb" class="form-control"> 
-            </div> 
-            <label class="control-label" for="city">City</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.city" id="city" class="form-control"> 
-            </div> 
-            <label class="control-label" for="postcode">Postcode</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="rawcompany.postcode" id="postcode" class="form-control"> 
-            </div> 
-            <label class="control-label" for="country">Country</label> 
-            <div class="controls"> 
-              <select ng-model="rawcompany.country" name="country" required="required" ng-options="c._id as c.name for c in countrys"> 
-                <option value="">Choose a Country:</option>
-              </select> 
-            </div> 
-          </tab>
-          <tab heading="Other" select="otherSelected(rawcompany)">
-            <label class="control-label" for="site">Site</label> 
-            <div class="controls"> 
-              <select ng-model="rawcompany.site" name="site" required="required" ng-options="c._id as c.name for c in sites"> 
-                <option value="">Choose a Site:</option>
-              </select> 
-            </div> 
-            <label class="control-label" for="customer">Customer</label> 
-            <div class="controls"> 
-              <select ng-model="rawcompany.customer" name="customer" required="required" ng-options="c._id as c.name for c in customers"> 
-                <option value="">Choose a Customer:</option>
-              </select> 
-            </div> 
-          </tab>
-        </tabset>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
       </div> 
       <div class="form-group"> 
         <div class="controls"> 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="mypanel" ng-controller="LoyaltyTransactionsController"> 
   <ul>
     <div class="page-header">
@@ -69,60 +68,3 @@
   </ul>
 </div>
 
-=======
-  <div class="mypanel" ng-controller="LoyaltyTransactionsController"> 
-  <ul>
-    <div class="page-header">
-      <h1>Create New LoyaltyTransaction</h1>
-    </div>
-  </ul>
-    <ul>
-      <form class="form-vertical" ng-submit="create()" ng-init="populateLOVs()"> 
-        <div class="form-group">
-          <label class="control-label" for="loyaltyScheme">Scheme</label> 
-          <div class="controls"> 
-              <input type="hidden" ui-select2="global.schemeSelect" ng-model="loyaltyTransaction.loyaltyScheme" ng-required="true"/>
-          </div> 
-          <div class="controls"> 
-            <select ng-model="loyaltyTransaction.loyaltyStatement" name="loyaltyStatement" ng-options="c._id as c.name for c in loyaltyStatements"> 
-              <option value="">Choose a Statement:</option>
-            </select> 
-          </div> 
-          <div class="controls"> 
-            <select ng-model="loyaltyTransaction.loyaltyMember" name="loyaltyMember" required="required" ng-options="c._id as c.card for c in loyaltyMembers"> 
-              <option value="">Choose a Member:</option>
-            </select> 
-          </div> 
-          <div class="controls"> 
-            <select ng-model="loyaltyTransaction.loyaltyPoint" name="loyaltyPoint" required="required" ng-options="c._id as c.name for c in loyaltyPoints"> 
-              <option value="">Choose a Point:</option>
-            </select> 
-          </div> 
-          <div class="controls"> 
-            <select ng-model="loyaltyTransaction.booking" name="booking" required="required" ng-options="c._id as c.name for c in bookings"> 
-              <option value="">Choose a Booking:</option>
-            </select> 
-          </div> 
-          <div class="controls"> 
-            <select ng-model="loyaltyTransaction.revenue" name="revenue" required="required" ng-options="c._id as c.name for c in revenues"> 
-              <option value="">Choose a Revenue:</option>
-            </select> 
-          </div> 
-          <label class="control-label" for="comments">Comments</label> 
-          <div class="controls"> 
-            <input type="text" ng-model="loyaltyTransaction.comments" id="comments" placeholder="Comments" class="form-control"> 
-          </div> 
-          <label class="control-label" for="points">Points</label> 
-          <div class="controls"> 
-            <input type="text" ng-model="loyaltyTransaction.points" id="comments" placeholder="Points" class="form-control"> 
-          </div> 
-        </div> 
-        <div class="form-group"> 
-          <div class="controls"> 
-            <input type="submit" class="btn btn-primary"> 
-          </div> 
-        </div> 
-      </form>
-    </ul>
-  </div>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73

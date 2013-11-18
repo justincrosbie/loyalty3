@@ -1,7 +1,6 @@
 <div class="mypanel" ng-controller="CustomersController"> 
   <ul>
     <div class="page-header">
-<<<<<<< HEAD
       <h1>Customer Details</h1>
     </div>
   </ul>
@@ -19,32 +18,6 @@
             	<input type="text" ng-model="customer.name" id="name" class="form-control"/>
             </div> 
 	
-=======
-      <h1>Create New Customer</h1>
-    </div>
-  </ul>
-  <ul>
-    <form class="form-vertical" ng-submit="create()" ng-init="populateSubscriptions()"> 
-      <div class="form-group"> 
-        <label class="control-label" for="name">Name</label> 
-        <div class="controls"> 
-          <input type="text" ng-model="customer.name" id="name" class="form-control"> 
-        </div> 
-        <label class="control-label" for="subscription">Subscription</label> 
-        <div class="controls"> 
-          <select ng-model="customer.subscription" name="subscription" required="required" ng-options="c._id as c.name for c in subscriptions"> 
-            <option value="">Choose a subscription:</option>
-          </select> 
-        </div> 
-        <label class="control-label" for="start">Start Date</label> 
-        <div class="controls"> 
-          <input type="text" ng-model="customer.start" id="start" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control">
-        </div>      
-        <label class="control-label" for="end">End Date</label> 
-        <div class="controls"> 
-          <input type="text" ng-model="customer.end" id="end" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control"> 
-        </div>      
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
       </div> 
       <div class="form-group"> 
         <div class="controls"> 
@@ -54,7 +27,4 @@
     </form>
   </ul>
 </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73

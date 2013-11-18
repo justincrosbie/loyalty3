@@ -10,20 +10,13 @@
             <form class="form-inline" role="form" ng-submit="findPaged()">
               <div class="form-group">
                 <label class="sr-only" for="query">Search for Person</label>
-<<<<<<< HEAD
                 <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter firstname middlename lastname">
-=======
-                <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter Firstname Lastname">
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
               </div>
               <button type="submit" class="btn btn-primary">Search</button>
             </form>
           </div>
-<<<<<<< HEAD
           
           
-=======
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
           <div class="col-md-2">
               <div class="controls"> 
                 <input type="hidden" ui-select2="global.companySelect" ng-model="companySearch" ng-click="findPaged()"/>
@@ -46,39 +39,22 @@
           <thead>
             <tr>
               <th class="header" ng-class="sortClass.title" ng-click="changeSort('title')">Title</th>
-<<<<<<< HEAD
               <th class="header" ng-class="sortClass.firstname" ng-click="changeSort('firstname')">First Name</th>
               <th class="header" ng-class="sortClass.middlename" ng-click="changeSort('middlename')">Middle Name</th>
               <th class="header" ng-class="sortClass.lastname" ng-click="changeSort('lastname')">Last Name</th>
               
               
-=======
-              <th class="header" ng-class="sortClass.firstname" ng-click="changeSort('firstname')">Name</th>
-              <th class="header" ng-class="sortClass.dob" ng-click="changeSort('dob')">Date of Birth</th>
-              <th>Company</th>
-              <th>Customer</th>
-              <th>Site</th>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
               <th/>
               <th/>
             </tr>
           </thead>
           <tr ng-repeat="person in persons">
-<<<<<<< HEAD
             <td><a href="#!/persons/{{ person._id }}">{{person.title.name}}</a></td>
             <td><a href="#!/persons/{{ person._id }}">{{person.firstname}}</a></td>
             <td><a href="#!/persons/{{ person._id }}">{{person.middlename}}</a></td>
             <td><a href="#!/persons/{{ person._id }}">{{person.lastname}}</a></td>
             
               
-=======
-            <td>{{person.title.name}}</td>
-            <td><a href="#!/persons/{{ person._id }}">{{person.firstname}} {{person.middlename}} {{person.lastname}}</a></td>
-            <td>{{person.dob | date}}</td>
-            <td>{{person.company.name}}</td>
-            <td>{{person.customer.name}}</td>
-            <td>{{person.site.name}}</td>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
             <td><a href="#!/persons/{{ person._id }}/edit">Edit</a></td>
             <td><a href="" ng-click="remove(person)" >Remove</a></td>
           </tr>
@@ -87,11 +63,7 @@
   <ul>
     <pre>Total: {{totalItems}}</pre>
   </ul>
-<<<<<<< HEAD
   <ul ng-show="totalItems > 10">
-=======
-  <ul>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
     <pagination total-items="totalItems" page="currentPage" max-size="maxSize" class="pagination-small" 
       boundary-links="true" rotate="false" num-pages="numPages" on-select-page="pageChanged(page)" >
     </pagination>

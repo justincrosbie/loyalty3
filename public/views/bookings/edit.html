@@ -1,7 +1,6 @@
 <div class="mypanel" ng-controller="BookingsController"> 
   <ul>
     <div class="page-header">
-<<<<<<< HEAD
       <h1>Booking Details</h1>
     </div>
   </ul>
@@ -107,60 +106,6 @@
         </tabset>
 
 	
-=======
-      <h1>Modify Booking</h1>
-    </div>
-  </ul>
-  <ul>
-    <form class="form-vertical" ng-submit="update()" ng-init="findOne();populateLOVs()"> 
-      <div class="form-group"> 
-        <tabset>
-          <tab heading="Details" select="detailsSelected(booking)">
-            <label class="control-label" for="code">Code</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="booking.code" id="code" class="form-control"> 
-            </div> 
-            <label class="control-label" for="datebooked">Date Booked</label> 
-            <div class="controls"> 
-              <input type="text" ng-model="booking.datebooked" id="datebooked" class="form-control" data-date-format="dd/mm/yyyy" bs-datepicker > 
-            </div> 
-          <label class="control-label" for="start">Start Date</label> 
-          <div class="controls"> 
-            <input type="text" ng-model="booking.start" id="start" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control">
-          </div>      
-          <label class="control-label" for="end">End Date</label> 
-          <div class="controls"> 
-            <input type="text" ng-model="booking.end" id="end" data-date-format="dd/mm/yyyy" bs-datepicker class="form-control"> 
-          </div>      
-            <label class="control-label" for="rawperson">Person</label> 
-            <div class="controls"> 
-              <select ng-model="booking.rawperson._id" name="rawperson" required="required" ng-options="c._id as c.name for c in rawpersons"> 
-                <option value="">Choose a Person:</option>
-              </select> 
-            </div> 
-            <label class="control-label" for="rawcompany">Company</label> 
-            <div class="controls"> 
-              <select ng-model="booking.rawcompany._id" name="rawcompany" required="required" ng-options="c._id as c.name for c in rawcompanys"> 
-                <option value="">Choose a Company:</option>
-              </select> 
-            </div> 
-          </tab>
-          <tab heading="Other" select="otherSelected(booking)">
-            <label class="control-label" for="site">Site</label> 
-            <div class="controls"> 
-              <select ng-model="booking.site._id" name="site" required="required" ng-options="c._id as c.name for c in sites"> 
-                <option value="">Choose a Site:</option>
-              </select> 
-            </div> 
-            <label class="control-label" for="customer">Customer</label> 
-            <div class="controls"> 
-              <select ng-model="booking.customer._id" name="customer" required="required" ng-options="c._id as c.name for c in customers"> 
-                <option value="">Choose a Customer:</option>
-              </select> 
-            </div> 
-          </tab>
-        </tabset>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
       </div> 
       <div class="form-group"> 
         <div class="controls"> 
@@ -169,9 +114,5 @@
       </div> 
     </form>
   </ul>
-<<<<<<< HEAD
 </div>
 
-=======
-</div>
->>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
