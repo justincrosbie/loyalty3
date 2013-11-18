@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 <div class="mypanel" ng-controller="BookingsController" ng-init="findPaged()">
+=======
+<div class="mypanel" ng-controller="BookingsController" ng-init="find()">
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
   <ul>
     <div class="page-header">
       <h1>Bookings</h1>
     </div>
   </ul>
   <ul>
+<<<<<<< HEAD
       <div class="row">
           <div class="col-md-6">
             <form class="form-inline" role="form" ng-submit="findPaged()">
@@ -56,12 +61,25 @@
             <td><a href="#!/bookings/{{ booking._id }}">{{booking.datebooked|date}}</a></td>
             
               
+=======
+      <table class="table table-striped table-bordered table-condensed">
+          <tr><th>Code</th><th>Date Booked</th><th>Start Date</th><th>End Date</th><th>Person</th><th>Customer</th><th>Site</th><th/><th/></tr>
+          <tr ng-repeat="booking in bookings">
+            <td><a href="#!/bookings/{{ booking._id }}">{{booking.code}}</a></td>
+            <td>{{booking.datebooked | date}}</td>
+            <td>{{booking.start | date}}</td>
+            <td>{{booking.end | date}}</td>
+            <td><a href="#!/rawpersons/{{ booking.rawperson._id }}">{{booking.rawperson.firstname}} {{booking.rawperson.middlename}} {{booking.rawperson.lastname}}</a></td>
+            <td>{{booking.customer.name}}</td>
+            <td>{{booking.site.name}}</td>
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
             <td><a href="#!/bookings/{{ booking._id }}/edit">Edit</a></td>
             <td><a href="" ng-click="remove(booking)" >Remove</a></td>
           </tr>
       </table>
   </ul>
   <ul>
+<<<<<<< HEAD
     <pre>Total: {{totalItems}}</pre>
   </ul>
   <ul ng-show="totalItems > 10">
@@ -70,6 +88,8 @@
     </pagination>
   </ul>
   <ul>
+=======
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
     <a href="#!/bookings/create" class="btn btn-primary">Create a new Booking</a>
   </ul>
 </div>

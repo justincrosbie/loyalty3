@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="mypanel" ng-controller="RawcompanysController" ng-init="findPaged()">
   <ul>
     <div class="page-header">
@@ -44,12 +45,29 @@
             <td><a href="#!/rawcompanys/{{ rawcompany._id }}">{{rawcompany.name}}</a></td>
             
               
+=======
+<div class="mypanel" ng-controller="RawcompanysController" ng-init="find()">
+  <ul>
+    <div class="page-header">
+      <h1>Rawcompanys</h1>
+    </div>
+  </ul>
+  <ul>
+      <table class="table table-striped table-bordered table-condensed">
+          <tr><th>Code</th><th>Name</th><th>Customer</th><th>Site</th><th/><th/></tr>
+          <tr ng-repeat="rawcompany in rawcompanys">
+            <td><a href="#!/rawcompanys/{{ rawcompany._id }}">{{rawcompany.code}}</a></td>
+            <td><a href="#!/rawcompanys/{{ rawcompany._id }}">{{rawcompany.name}}</a></td>
+            <td>{{rawcompany.customer.name}}</td>
+            <td>{{rawcompany.site.name}}</td>
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
             <td><a href="#!/rawcompanys/{{ rawcompany._id }}/edit">Edit</a></td>
             <td><a href="" ng-click="remove(rawcompany)" >Remove</a></td>
           </tr>
       </table>
   </ul>
   <ul>
+<<<<<<< HEAD
     <pre>Total: {{totalItems}}</pre>
   </ul>
   <ul ng-show="totalItems > 10">
@@ -59,5 +77,8 @@
   </ul>
   <ul>
     <a href="#!/rawcompanys/create" class="btn btn-primary">Create a new Raw Company</a>
+=======
+    <a href="#!/rawcompanys/create" class="btn btn-primary">Create a new Rawcompany</a>
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
   </ul>
 </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 window.angular.module('ngff.controllers.loyaltyStatements', [])
   .controller('LoyaltyStatementsController', ['$scope','$routeParams','$location','Global','LoyaltySchemes','Customers','LoyaltyStatements',
     function($scope, $routeParams, $location, Global, LoyaltySchemes,Customers, LoyaltyStatements) {
@@ -138,4 +139,65 @@ window.angular.module('ngff.controllers.loyaltyStatements', [])
         $scope.findPaged();
       }
 
+=======
+window.angular.module('ngff.controllers.loyaltyStatements', [])
+  .controller('LoyaltyStatementsController', ['$scope','$routeParams','$location','Global','LoyaltySchemes','LoyaltyStatements',
+    function($scope, $routeParams, $location, Global, LoyaltySchemes, LoyaltyStatements) {
+ 
+      $scope.global = Global;
+ 
+      $scope.populateLOVs = function(query) {
+
+        LoyaltySchemes.query(query, function (loyaltySchemes) {
+          $scope.loyaltySchemes = loyaltySchemes;
+        });
+      };
+
+      $scope.create = function () {
+        var loyaltyStatement = new LoyaltyStatements({ 
+          name: this.loyaltyStatement.name,
+          code: this.loyaltyStatement.code,
+          description: this.loyaltyStatement.description,
+          active: this.loyaltyStatement.active,
+          start: this.loyaltyStatement.start,
+          end: this.loyaltyStatement.end,
+          loyaltyScheme: this.loyaltyStatement.loyaltyScheme._id
+        });
+ 
+        loyaltyStatement.$save(function (response) {
+          $location.path("loyaltyStatements/" + response._id);
+        });
+ 
+        this.name = "";
+      };
+ 
+      $scope.update = function () {
+        var loyaltyStatement = $scope.loyaltyStatement;
+ 
+        loyaltyStatement.$update(function () {
+          $location.path('loyaltyStatements/' + loyaltyStatement._id);
+        });
+      };
+ 
+      $scope.find = function (query) {
+        LoyaltyStatements.query(query, function (loyaltyStatements) {
+          $scope.loyaltyStatements = loyaltyStatements;
+        });
+      };
+ 
+      $scope.findOne = function () {
+        LoyaltyStatements.get({ loyaltyStatementId: $routeParams.loyaltyStatementId }, function (loyaltyStatement) {
+          $scope.loyaltyStatement = loyaltyStatement;
+        });
+      };
+ 
+      $scope.remove = function (loyaltyStatement) {
+        loyaltyStatement.$remove();
+        for (var i in $scope.loyaltyStatements) {
+          if ($scope.loyaltyStatements[i] == loyaltyStatement) {
+            $scope.loyaltyStatements.splice(i, 1)
+          }
+        }
+      };
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
     }]);

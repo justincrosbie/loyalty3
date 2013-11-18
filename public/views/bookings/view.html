@@ -7,6 +7,7 @@
   <ul>
     <div  class="well well-small">
       <p>Code: {{ booking.code }}</p>
+<<<<<<< HEAD
       <p>Status: {{ booking.status.name }}</p>
       <p>Type: {{ booking.type.name }}</p>
       <p>Date Booked: {{ booking.datebooked|date }}</p>
@@ -24,6 +25,15 @@
       <p>Datasource: {{ booking.datasource.name }}</p>
       <p>Customer: {{ booking.customer.name }}</p>
 
+=======
+      <p>Date Booked: {{ booking.datebooked | date }}</p>
+      <p>Start Date: {{ booking.start | date }}</p>
+      <p>End Date: {{ booking.end | date }}</p>
+      <p>Person: {{ booking.rawperson.firstname + ' ' + booking.rawperson.lastname }}</p>
+      <p>Company: {{ booking.rawcompany.name }}</p>
+      <p>Site: {{ booking.site.name }}</p>
+      <p>Customer: {{ booking.customer.name }}</p>
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
     </div>
   </ul>
   <ul>

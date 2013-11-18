@@ -1,6 +1,7 @@
 <div class="mypanel" ng-controller="LoyaltyPointsController" ng-init="findOne()">
   <ul>
     <div class="page-header">
+<<<<<<< HEAD
       <h1>View Loyalty Point</h1>
     </div>
   </ul>
@@ -20,5 +21,22 @@
   </ul>
   <ul>
 	  <a href="#!/loyaltyPoints">View all Loyalty Points</a>
+=======
+      <h1>View LoyaltyPoint</h1>
+    </div>
+  </ul>
+  <ul>
+    <p>Scheme: {{ loyaltyPoint.loyaltyScheme.name }}</p>
+    <p>Name: {{ loyaltyPoint.name }}</p>
+    <p>Code: {{ loyaltyPoint.code }}</p>
+    <p>Description: {{ loyaltyPoint.description }}</p>
+    <p>Is Active: {{ loyaltyPoint.active }}</p>
+    <p>Formula: {{ loyaltyPoint.formula }}</p>
+    <p>Start Date: {{ loyaltyPoint.start | date }}</p>
+    <p>End Date: {{ loyaltyPoint.end | date }}</p>
+  </ul>
+  <ul>
+	  <a href="#!/loyaltyPoints">View all LoyaltyPoints</a>
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
   </ul>
 </div>

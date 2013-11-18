@@ -20,6 +20,7 @@
 
 .mypanel {
     margin: 0px 40px 0px 0px !important;
+<<<<<<< HEAD
 }
 
 .map-canvas { height: 400px; }
@@ -27,4 +28,6 @@
 .map {
   height: 400px;
   width: 600px;
+=======
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
 }

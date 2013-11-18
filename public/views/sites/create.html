@@ -1,6 +1,7 @@
 <div class="mypanel" ng-controller="SitesController"> 
   <ul>
     <div class="page-header">
+<<<<<<< HEAD
       <h1>Site Details</h1>
     </div>
   </ul>
@@ -33,6 +34,25 @@
             	<input type="text" ng-model="site.longitude" id="longitude" class="form-control"/>
             </div> 
 	
+=======
+      <h1>Create New Site</h1>
+    </div>
+  </ul>
+
+  <ul>
+    <form class="form-vertical" ng-submit="create()" ng-init="populateCustomers()"> 
+      <div class="form-group"> 
+        <label class="control-label" for="name">Name</label> 
+        <div class="controls"> 
+          <input type="text" ng-model="site.name" id="name" placeholder="Name"> 
+        </div> 
+        <label class="control-label" for="customer">Customer</label> 
+        <div class="controls"> 
+          <select ng-model="site.customer" name="customer" required="required" ng-options="c._id as c.name for c in customers"> 
+            <option value="">Choose a customer:</option>
+          </select> 
+        </div> 
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
       </div> 
       <div class="form-group"> 
         <div class="controls"> 
@@ -42,4 +62,7 @@
     </form>
   </ul>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05644ebd4e842c71a618037d6cf2402b08f74c73
